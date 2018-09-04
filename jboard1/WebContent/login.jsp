@@ -1,28 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String r = request.getParameter("r");
-	out.println(r);
-	if(r == "success") {
+	String reg = request.getParameter("reg");
 %>
-<script>
-	alert("회원가입에 성공했습니다.");
-</script>
-<%
-	} else {
-%>
-<script>
-	alert("다시 시도해 주세요");
-</script>
-<%
-	}
-%>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>로그인</title>
 		<link rel="stylesheet" href="./css/style.css" />
+		<script>
+			var reg = "<%= reg %>";
+			if(reg != null) {
+				alert("회원가입이 완료되었습니다.")
+			}
+		</script>
 	</head>
 	<body>
 		<div id="member">

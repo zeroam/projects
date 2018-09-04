@@ -61,5 +61,5 @@
 	}
 	
 	//로그인페이지 이동
-	response.sendRedirect("../login.jsp?r=success");
+	response.sendRedirect("../login.jsp?reg=success");
 %>
