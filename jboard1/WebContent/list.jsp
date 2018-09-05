@@ -1,7 +1,16 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="kr.co.jboard1.ConnectDataBase"%>
 <%@page import="kr.co.jboard1.Member"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	Member user = (Member)session.getAttribute("user");
+
+	String HOST = "jdbc:mysql://192.168.0.178:3306/jcw";
+	String USER = "jcw";
+	String PASS = "1234";
+	
+	ConnectDataBase conn = new ConnectDataBase(HOST, USER, PASS);
+	ResultSet rs = conn.executeQuery("SELECT * FROM JB_BOARD ORDER BY seq DESC;");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,14 +33,19 @@
 						<td>날짜</td>
 						<td>조회</td>
 					</tr>
-				
+				<% 
+					while(rs.next()) {
+				%>
 					<tr>
-						<td>1</td>
-						<td><a href="#">테스트 제목입니다.</a>&nbsp;[3]</td>
-						<td>홍길동</td>
-						<td>18-03-01</td>
-						<td>12</td>
+						<td><%= rs.getString("seq") %></td>
+						<td><a href="view.jsp?seq=<%= rs.getString("seq") %>"><%= rs.getString("title") %></a>&nbsp;[<%= rs.getString("comment") %>]</td>
+						<td><%= rs.getString("uid") %></td>
+						<td><%= rs.getString("rdate").substring(2, 10) %></td>
+						<td><%= rs.getString("hit") %></td>
 					</tr>
+				<%
+					}
+				%>
 				</table>
 			</div>
 			<!-- 페이징 -->
@@ -42,10 +56,9 @@
 				<a href="#" class="next">다음</a>
 				</span>
 			</nav>
-			<a href="#" class="btnWrite">글쓰기</a>
+			<a href="./write.jsp?uid=<%= user.getUid() %>" class="btnWrite">글쓰기</a>
 		</div>
 	</body>
-
 </html>
 
 

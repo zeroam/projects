@@ -56,5 +56,11 @@ public class ConnectDataBase {
 		return num;
 	}
 	
+	public void close() throws SQLException {
+		if(rs != null) rs.close();
+		if(psmt != null) psmt.close();
+		if(stmt != null) stmt.close();
+		if(conn != null) conn.close();
+	}
 	
 }

@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String uid = request.getParameter("uid");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +14,8 @@
 		<div id="board">
 			<h3>글쓰기</h3>
 			<div class="write">
-				<form action="#" method="post">
+				<form action="./proc/write.jsp" method="post">
+					<input type="hidden" name="uid" value="<%= uid %>"/>
 					<table>
 						<tr>
 							<td>제목</td>
@@ -30,7 +35,7 @@
 						</tr>
 					</table>
 					<div class="btns">
-						<a href="#" class="cancel">취소</a>
+						<a href="./list.jsp" class="cancel">취소</a>
 						<input type="submit" class="submit" value="작성완료" />
 					</div>
 				</form>

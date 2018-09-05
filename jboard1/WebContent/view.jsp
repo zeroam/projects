@@ -1,4 +1,18 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="kr.co.jboard1.ConnectDataBase"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<% 
+	request.setCharacterEncoding("UTF-8");
+	//int로 안받아도 될까??
+	String seq = request.getParameter("seq");
+	
+	String HOST = "jdbc:mysql://192.168.0.178:3306/jcw";
+	String USER = "jcw";
+	String PASS = "1234";
+	
+	ConnectDataBase conn = new ConnectDataBase(HOST, USER, PASS);
+	ResultSet rs = conn.executeQuery("SELECT * FROM JB_BOARD WHERE seq='"+seq+"';");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,9 +26,10 @@
 			<div class="view">
 				<form action="#" method="post">
 					<table>
+					<% if(rs.next()) { %>
 						<tr>
 							<td>제목</td>
-							<td><input type="text" name="subject" value="테스트 제목 입니다." readonly />
+							<td><input type="text" name="subject" value="<%= rs.getString("title") %>" readonly />
 							</td>
 						</tr>
 						
@@ -29,14 +44,15 @@
 						<tr>
 							<td>내용</td>
 							<td>
-								<textarea name="content" rows="20" readonly>테스트 내용 입니다.</textarea>
+								<textarea name="content" rows="20" readonly><%= rs.getString("contents") %></textarea>
 							</td>
 						</tr>
+					<% } %>
 					</table>
 					<div class="btns">
-						<a href="#" class="cancel del">삭제</a>
+						<a href="./proc/delete.jsp?seq=<%= seq %>" class="cancel del">삭제</a>
 						<a href="#" class="cancel mod">수정</a>
-						<a href="#" class="cancel">목록</a>
+						<a href="./list.jsp" class="cancel">목록</a>
 					</div>
 				</form>
 			</div><!-- view 끝 -->
