@@ -1,3 +1,4 @@
+<%@page import="kr.co.jboard1.dao.BoardDAO"%>
 <%@page import="kr.co.jboard1.vo.BoardVO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="kr.co.jboard1.vo.ConnectDataBase"%>
@@ -7,14 +8,9 @@
 
 	String seq = request.getParameter("seq");
 	
-	ConnectDataBase conn = new ConnectDataBase();
-	BoardVO vo = null;
-	ResultSet rs = conn.executeQuery("SELECT * FROM JB_BOARD WHERE seq='"+seq+"';");
-	if(rs.next()) {
-		vo = BoardVO.initBoard(rs);
-	}
-	if(rs!=null) rs.close();
-	if(conn!=null) conn.close();
+	BoardDAO dao = BoardDAO.getInstance();
+	
+	BoardVO vo = dao.view(seq);
 %>
 <!DOCTYPE html>
 <html>

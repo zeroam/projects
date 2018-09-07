@@ -40,9 +40,9 @@ public class BoardDAO {
 			count = rs.getInt(1);
 		}
 
-		rs.close();
-		stmt.close();
-		conn.close();
+		if(rs!=null) rs.close();
+		if(stmt!=null) stmt.close();
+		if(conn!=null) conn.close();
 
 		return count;
 	}
@@ -110,8 +110,17 @@ public class BoardDAO {
 	}
 
 	// 글보기
-	public void view(String seq) {
+	public BoardVO view(String seq) throws Exception {
+		ConnectDataBase conn = new ConnectDataBase();
+		BoardVO vo = null;
+		ResultSet rs = conn.executeQuery("SELECT * FROM JB_BOARD WHERE seq='"+seq+"';");
+		if(rs.next()) {
+			vo = BoardVO.initBoard(rs);
+		}
+		if(rs!=null) rs.close();
+		if(conn!=null) conn.close();
 		
+		return vo;
 	}
 
 	// 글수정
