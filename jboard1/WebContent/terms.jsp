@@ -1,23 +1,19 @@
+<%@page import="kr.co.jboard1.config.DBConfig"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	//1단계
-	//classNotFountException
-	Class.forName("com.mysql.jdbc.Driver");
+	
+	
 	
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-	
-	//2단계
-	String host = "jdbc:mysql://192.168.0.178:3306/jcw";
-	String user = "jcw";
-	String pass = "1234";
-	
-	conn = DriverManager.getConnection(host, user, pass);
+
+	//classNotFountException
+	conn = DBConfig.getConnect();
 
 	//3단계
 	stmt = conn.createStatement();

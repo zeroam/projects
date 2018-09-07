@@ -1,17 +1,20 @@
+<%@page import="kr.co.jboard1.vo.BoardVO"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="kr.co.jboard1.ConnectDataBase"%>
+<%@page import="kr.co.jboard1.vo.ConnectDataBase"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <% 
 	request.setCharacterEncoding("UTF-8");
-	//int로 안받아도 될까??
+
 	String seq = request.getParameter("seq");
 	
-	String HOST = "jdbc:mysql://192.168.0.178:3306/jcw";
-	String USER = "jcw";
-	String PASS = "1234";
-	
-	ConnectDataBase conn = new ConnectDataBase(HOST, USER, PASS);
+	ConnectDataBase conn = new ConnectDataBase();
+	BoardVO vo = null;
 	ResultSet rs = conn.executeQuery("SELECT * FROM JB_BOARD WHERE seq='"+seq+"';");
+	if(rs.next()) {
+		vo = BoardVO.initBoard(rs);
+	}
+	if(rs!=null) rs.close();
+	if(conn!=null) conn.close();
 %>
 <!DOCTYPE html>
 <html>
@@ -26,13 +29,12 @@
 			<div class="view">
 				<form action="#" method="post">
 					<table>
-					<% if(rs.next()) { %>
 						<tr>
 							<td>제목</td>
-							<td><input type="text" name="subject" value="<%= rs.getString("title") %>" readonly />
+							<td><input type="text" name="subject" value="<%= vo.getTitle() %>" readonly />
 							</td>
 						</tr>
-						
+						<!-- 
 						<tr>
 							<td>첨부파일</td>
 							<td>
@@ -40,14 +42,13 @@
 								<span>3회 다운로드</span>
 							</td>
 						</tr>
-						
+						 -->						
 						<tr>
 							<td>내용</td>
 							<td>
-								<textarea name="content" rows="20" readonly><%= rs.getString("contents") %></textarea>
+								<textarea name="content" rows="20" readonly><%= vo.getContent() %></textarea>
 							</td>
 						</tr>
-					<% } %>
 					</table>
 					<div class="btns">
 						<a href="./proc/delete.jsp?seq=<%= seq %>" class="cancel del">삭제</a>

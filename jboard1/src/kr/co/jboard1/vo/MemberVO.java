@@ -1,6 +1,8 @@
-package kr.co.jboard1;
+package kr.co.jboard1.vo;
 
-public class Member {
+import java.sql.ResultSet;
+
+public class MemberVO {
 	
 	private int seq;
 	private String uid;
@@ -15,6 +17,25 @@ public class Member {
 	private String addr2;
 	private String regip;
 	private String rdate;
+	
+	public static MemberVO initMemberVO(ResultSet rs) throws Exception {
+		MemberVO ur = new MemberVO();
+		ur.setSeq(rs.getInt(1));
+		ur.setUid(rs.getString(2));
+		ur.setPass(rs.getString(3));
+		ur.setName(rs.getString(4));
+		ur.setNick(rs.getString(5));
+		ur.setEmail(rs.getString(6));
+		ur.setHp(rs.getString(7));
+		ur.setGrade(rs.getInt(8));
+		ur.setZip(rs.getString(9));
+		ur.setAddr1(rs.getString(10));
+		ur.setAddr2(rs.getString(11));
+		ur.setRegip(rs.getString(12));
+		ur.setRdate(rs.getString(13));
+		return ur;
+	}
+	
 	
 	public int getSeq() {
 		return seq;
