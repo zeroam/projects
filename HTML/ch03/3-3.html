@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3-3</title>
+    <style>
+      /*background-image*/
+      section:nth-of-type(1)>div {
+        width: 100%;
+        height: 300px;
+        border: 1px solid black;
+        margin-bottom: 6px;
+      }
+
+      section:nth-of-type(1)>div:nth-child(1) { background-image: url('./img/bg_front.png'); }
+      section:nth-of-type(1)>div:nth-child(2) { background-image: url('./img/bg_back.png'); }
+
+
+      /* background-size */
+      section:nth-of-type(2)>div {
+        display: inline-block;
+        width: 400px;
+        height : 200px;
+        border: 1px solid black;
+        background-image: url('./img/bg_front.png');
+      }
+      section:nth-of-type(2)>div:nth-child(1) { background-size: 100px;}
+      section:nth-of-type(2)>div:nth-child(2) { background-size: 100%;}
+      section:nth-of-type(2)>div:nth-child(3) { background-size: 100px 100px;}
+      section:nth-of-type(2)>div:nth-child(4) { background-size: 100% 100%;}
+
+
+      /* background-repeat */
+      section:nth-of-type(3)>div {
+        display: inline-block;
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      section:nth-of-type(3)>div:nth-child(1) {
+        background-image: url('./img/repeat-x.png');
+        background-repeat: repeat-x;
+      }
+      section:nth-of-type(3)>div:nth-child(2) {
+        background-image: url('./img/repeat-y.png');
+        background-repeat: repeat-y;
+
+      }
+      section:nth-of-type(3)>div:nth-child(3) {
+        background-image: url('./img/puppy.png');
+        background-repeat: no-repeat;
+      }
+
+
+      /* background-position */
+      section:nth-of-type(4)>div {
+        display: inline-block;
+        width: 400px;
+        height: 200px;
+        border: 1px solid black;
+        background-image: url('./img/puppy.png');
+        background-repeat: no-repeat;
+        background-size: 60px 50px
+      }
+      section:nth-of-type(4)>div:nth-child(1) { background-position: left; }
+      section:nth-of-type(4)>div:nth-child(2) { background-position: right; }
+      section:nth-of-type(4)>div:nth-child(3) { background-position: top; }
+      section:nth-of-type(4)>div:nth-child(4) { background-position: bottom; }
+      section:nth-of-type(4)>div:nth-child(5) { background-position: center; }
+      section:nth-of-type(4)>div:nth-child(6) { background-position: 30px; }
+      section:nth-of-type(4)>div:nth-child(7) { background-position: 100% 10px; }
+      section:nth-of-type(4)>div:nth-child(8) { background-position: 100px 100px; }
+
+
+      /* background-color */
+      section:nth-of-type(5)>div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      section:nth-of-type(5)>div:nth-child(1) { background-color: orange; }
+      section:nth-of-type(5)>div:nth-child(2) { background-color: rgb(177, 100, 122); }
+      section:nth-of-type(5)>div:nth-child(3) { background-color: #8000FF; }
+
+      /* background-속성 */
+      section:nth-of-type(6)>div {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      section:nth-of-type(6)>div:nth-child(1) {
+        background: #FFFF00 url('./img/puppy.png') top/60px no-repeat;
+      }
+      section:nth-of-type(6)>div:nth-child(2) {
+        background: url('./img/puppy.png') no-repeat;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h3>3.background 속성</h3>
+
+    <h4>background-image 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+    </section>
+
+    <h4>background-size 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+    <h4>background-repeat 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+    <h4>background-position 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+    <h4>background-color 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+    <h4>background 속성</h4>
+    <section>
+      <div></div>
+      <div></div>
+    </section>
+
+
+  </body>
+</html>

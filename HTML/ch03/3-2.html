@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3-2</title>
+    <style>
+
+      section:nth-child(3)>div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: orange;
+      }
+
+      section:nth-of-type(1)>span {
+        /* span은 인라인 태그라 크기를 가지지 못함 */
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: green;
+      }
+
+
+      section:nth-of-type(2)>div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+      }
+
+      section:nth-child(5)>div:nth-child(6) {
+        display: block;
+      }
+
+      section:nth-of-type(2)>div:nth-child(1) { margin: 10px 9px 8px 7px; }
+      section:nth-of-type(2)>div:nth-child(2) { margin: 10px 9px 8px; }
+      section:nth-of-type(2)>div:nth-child(3) { margin: 10px 9px; }
+      section:nth-of-type(2)>div:nth-child(4) { margin: 10px; }
+      section:nth-of-type(2)>div:nth-child(5) {
+        margin-top: 10px;
+        margin-right: 9px;
+        margin-bottom: 8px;
+        margin-left: 7px;
+      }
+      section:nth-of-type(2)>div:nth-child(6) {
+        /* 박스를 가운데 정렬 */
+        margin: 0px auto;
+      }
+
+
+      /* padding 속성 */
+      section:nth-of-type(3)>div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: orange;
+      }
+      section:nth-of-type(3)>div:nth-child(1) { padding: 10px 9px 8px 7px; }
+      section:nth-of-type(3)>div:nth-child(2) { padding: 10px 9px 8px; }
+      section:nth-of-type(3)>div:nth-child(3) { padding: 10px 9px; }
+      section:nth-of-type(3)>div:nth-child(4) { padding: 10px; }
+      section:nth-of-type(3)>div:nth-child(5) {
+        padding: 10px;
+        /* 패딩이 생기더라도 박스가 커지지 않도록 해줌 */
+        /* 가로, 세로 고정된 크기값에서 안쪽여백이 생성 */
+        box-sizing: border-box;
+      }
+
+
+      /* border 속성 */
+      section:nth-of-type(4)>div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: yellow;
+      }
+      section:nth-of-type(4)>div:nth-child(1) {
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
+      }
+      section:nth-of-type(4)>div:nth-child(2) {
+        border: 1px solid black;
+      }
+      section:nth-of-type(4)>div:nth-child(3) {
+        border: 1px dotted black;
+      }
+      section:nth-of-type(4)>div:nth-child(4) {
+        /* 박스사이즈가 커짐 */
+        padding: 10px;
+        border: 10px solid blue;
+        box-sizing: border-box;
+      }
+      section:nth-of-type(4)>div:nth-child(5) {
+        border: 1px solid black;
+        border-radius: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3>2.박스 속성</h3>
+
+    <h4>width, height 속성</h4>
+    <section>
+      <div>box1</div>
+      <span>box2</span>
+    </section>
+
+
+    <h4>margin 속성</h4>
+    <section>
+      <div>box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>box5</div>
+      <div>box6</div>
+    </section>
+
+
+    <h4>padding 속성</h4>
+    <section>
+      <div>box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>box5</div>
+    </section>
+
+
+    <h4>border 속성</h4>
+    <section>
+      <div>box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>box5</div>
+    </section>
+  </body>
+</html>
