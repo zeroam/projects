@@ -1,12 +1,12 @@
 function Account(bank, accNo, name, money) {
-  //멤버 변수
-  this.bank = bank;
-  this.accNo = accNo;
+  //멤버 변수 - this 유무 상관x
+  bank = bank;
+  accNo = accNo;
   this.name = name;
   this.money = money;
 
 
-  //멤버 함수
+  //멤버 함수 - this 없으면 에러
   this.deposit = function(money) {
     this.money += money;
   }

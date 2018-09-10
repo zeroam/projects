@@ -20,6 +20,73 @@
       sh.withdraw(15000);
       sh.show();
 
+
+      //리터럴 방식 객체
+      var arr = [1, 2, 3, 4, 5]; // 자바스크립트 리터럴 배열
+      //JSON : Javascript Object Notation
+      var acc = {
+        //this 있으면 에러
+        bank: '국민은행',
+        num: '123-11-1234',
+        name: '이순신',
+        money: 50000,
+        deposit: function(money) {
+          this.money += money;
+        },
+        withdraw: function(money) {
+          this.money -= money;
+        },
+        show: function() {
+          document.write("============================<br/>");
+          document.write("은 행 명 : "+this.bank+"<br/>");
+          document.write("계좌번호 : "+this.num+"<br/>");
+          document.write("입 금 주 : "+this.name+"<br/>");
+          document.write("현재잔액 : "+this.money+"<br/>");
+          document.write("============================<br/>");
+        }
+      };
+
+      acc.deposit(20000);
+      acc.withdraw(15000);
+      acc.show();
+
+
+
+      //내장객체
+      var date = new Date();
+      var yy = date.getFullYear();
+      var mm = date.getMonth();
+      var dd = date.getDate();
+      var hour = date.getHours();
+      var min = date.getMinutes();
+      var sec = date.getSeconds();
+
+      var ymd = yy+'년 '+mm+'월 '+dd+'일';
+      var hms = hour+':'+min+':'+sec;
+      document.write('현재날짜 : '+ymd+'<br/>');
+      document.write('현재시간 : '+hms+'<br/>');
+
+
+      //var math = new Math();
+      var rs1 = Math.abs(-5);
+      var rs2 = Math.ceil(1.13);
+      var rs3 = Math.floor(1.9);
+      var rs4 = Math.round(1.13);
+      var rs5 = Math.round(1.9);
+
+      document.write('rs1 : ' + rs1 + '<br/>');
+      document.write('rs2 : ' + rs2 + '<br/>');
+      document.write('rs3 : ' + rs3 + '<br/>');
+      document.write('rs4 : ' + rs4 + '<br/>');
+      document.write('rs5 : ' + rs5 + '<br/>');
+
+      //0에서 10사이의 실수
+      var rnum1 = Math.random()*10;
+      var rnum2 = Math.ceil(rnum1); //1~10까지 임의의 정수
+
+      document.write('rnum1 : ' + rnum1 + '<br/>')
+      document.write('rnum2 : ' + rnum2 + '<br/>')
+
     </script>
   </body>
 </html>
