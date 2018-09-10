@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1-1</title>
+  </head>
+  <body>
+    <h3>1.자바스크립트 기초</h3>
+    <script>
+      //변수
+      var value1 = 1;
+      var value2 = true;
+      var value3 = 1.23;
+      var value4 = "hello";
+      var value5 = 'hello';
+      var value6 = null;
+
+      document.write('value1 : ' + value1 + '<br>');
+      document.write('value2 : ' + value2 + '<br>');
+      document.write('value3 : ' + value3 + '<br>');
+      document.write('value4 : ' + value4 + '<br>');
+      document.write('value5 : ' + value5 + '<br>');
+      document.write('value6 : ' + value6 + '<br>');
+
+      //선언 함수
+      function fx(x1, x2) {
+        var y = 5*x1 + x2;
+        return y;
+      }
+
+      //변수가 갖는 함수? - 익명함수
+      function print(str) {
+        str();
+      }
+
+      //익명함수 자체로 전달
+      print(function () {
+        document.write("매개변수로 전달된 익명함수 실행!<br/>")
+      });
+
+
+      var rs = fx(2, 3);
+      document.write('rs : ' + rs + '<br>');
+
+
+      //익명 함수(이름이 없는 함수) - 변수에 담아서 사용
+      var fx2 = function (x1, x2) {
+                  var y = 7*x1 + x2;
+                  return y;
+                }
+
+      var rs2 = fx2(5, 7);
+      document.write('rs2 : '+rs2+'<br />' )
+
+
+      //내장함수
+      /*
+      alert('기본대화상자');
+      var rs3 = confirm('확인, 취소 대화상자');
+      document.write('rs3: ' + rs3 + '<br/>');
+      */
+
+      setTimeout(function () {
+        document.write('3초 후에 실행되는 함수<br/>')
+      }, 1000*3);
+
+      //주기함수
+      setInterval(function() {
+        document.write('5초 마다 실행되는 함수<br/>')
+      }, 1000*5);
+
+
+    </script>
+  </body>
+</html>

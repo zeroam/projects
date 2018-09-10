@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1-2</title>
+    <script src="./js/Account.js"></script>
+  </head>
+  <body>
+    <h3>2.자바스크립 객체</h3>
+    <script>
+
+      var kb = new Account('국민은행', '123-12-1123', '김유신', 10000);
+      var sh = new Account('신한은행', '123-11-1111', '김춘추', 20000);
+
+      kb.deposit(40000);
+      kb.withdraw(25000);
+      kb.show();
+
+      sh.deposit(10000);
+      sh.withdraw(15000);
+      sh.show();
+
+    </script>
+  </body>
+</html>
