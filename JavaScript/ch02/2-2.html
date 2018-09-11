@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>2-2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+      $(document).ready(function(){
+        //확장집합(jQuery함수로 선택된 객체)
+        var ul = $('ul');
+        var li = $('ul>li');
+
+        //length - 확장집합의 객체 갯수
+        var rs1 = ul.length;
+        var rs2 = li.length;
+
+        console.log('rs1 : ' + rs1);
+        console.log('rs2 : ' + rs2);
+
+        //eq() - 확장집합에서 특정 객체를 추출
+        var tag1 = li.eq(1);
+        tag1.css('color', 'red');
+        li.eq(2).css('color', 'blue');
+
+        //children()
+        ul.children().eq(0).css('color', 'green');
+
+        //next(), nextAll()
+        ul.children().eq(1).next().next().css('color', 'aqua');
+        ul.children().eq(0).nextAll().css('border', '1px solid black');
+
+        //prev(), prevAll()
+        $('ol').children().eq(2).prev().css('color', 'green');
+        $('ol').children().eq(4).prevAll().css('background', 'pink')
+
+        //parent()
+        $('li').parent().css('border', '1px dotted black');
+
+        //each()
+        li.each(function() {
+          //현재 실행중인 확장집합의 객체
+          $(this).css('background', 'yellow');
+        });
+
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <h3>2.확장집합 함수</h3>
+
+    <ul>
+      <li>서울</li>
+      <li>대전</li>
+      <li>대구</li>
+      <li>부산</li>
+      <li>광주</li>
+    </ul>
+
+    <ol>
+      <li>서울</li>
+      <li>대전</li>
+      <li>대구</li>
+      <li>부산</li>
+      <li>광주</li>
+    </ol>
+
+  </body>
+</html>
