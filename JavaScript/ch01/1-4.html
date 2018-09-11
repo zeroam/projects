@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1-4</title>
+    <script>
+      // 마우스 클릭
+      function event1() {
+        alert('클릭했습니다.');
+      }
+
+      // 마우스 올리기
+      function event2(obj) {
+        obj.style.background = 'orange';
+      }
+
+      // 마우스 떠나기
+      function event3(obj) {
+        obj.style.background = 'white';
+      }
+
+      window.onload = function() {
+
+        var tag1 = document.getElementById('tag1');
+        var tag2 = document.getElementById('tag2');
+
+        tag1.addEventListener('click', function() {
+          alert('클릭했습니다.');
+        });
+
+        tag2.addEventListener('mouseover', function() {
+          this.style.background = 'green';
+        });
+        tag2.addEventListener('mouseout', function() {
+          this.style.background = 'yellow';
+        });
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <h3>4.자바스크립트 이벤트</h3>
+    <!-- 인라인 이벤트 -->
+    <h2 onclick="event1()">클릭하세요.</h2>
+    <h2 onmouseover="event2(this)" onmouseout="event3(this)">마우스를 올리세요.</h2>
+
+    <!-- 리스너 이벤트 -->
+    <h2 id="tag1">클릭 이벤트</h2>
+    <h2 id="tag2">마우스 이벤트</h2>
+  </body>
+</html>

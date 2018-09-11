@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1-3</title>
+    <script>
+
+      //브라우저가 HTML문서를 로드 한 후 실행되는 이벤트
+      window.onload = function() {
+        // 문서객체 생성 - 마지막에 실행되어야 함
+        var h3 = document.createElement('h3');
+        var txt = document.createTextNode("H3 문서객체 생성")
+        h3.appendChild(txt);
+        document.body.appendChild(h3);
+
+
+        //문서객체 수정
+        var li = document.getElementsByTagName('li');
+        li[2].innerHTML = '울산';
+        li[0].style.color = 'red';
+
+        //박스만들기
+        var box2 = document.getElementById('box2');
+        box2.style.width = '100px';
+        box2.style.height = '100px';
+        box2.style.border = '1px solid black';
+        box2.style.background = 'orange';
+
+        //박스제거
+        var box3 = document.getElementById('box3');
+        document.body.removeChild(box3);
+      }
+
+    </script>
+    <style>
+      #box1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>3.문서객체</h3>
+
+    <ul>
+      <li>서울</li>
+      <li>대전</li>
+      <li>대구</li>
+      <li>부산</li>
+      <li>광주</li>
+    </ul>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3">box3</div>
+
+  </body>
+</html>
