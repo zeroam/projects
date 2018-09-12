@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>2-4</title>
+    <script>
+      $(document).ready(function() {
+        $('.box1').click(function() {
+          $(this).css('background', 'blue');
+        })
+
+        $('.box2').mousedown(function() {
+          $(this).css('background', 'gray');
+        });
+        $('.box3').mouseup(function() {
+          $(this).css('background', 'white');
+        });
+        $('.box4').mouseover(function() {
+          $(this).css('background', 'orange');
+        });
+        $('.box5').mouseout(function() {
+          $(this).css('background', 'red');
+        });
+        $('.box6').hover(
+          function() {
+            //mouseover
+            $(this).css('background', 'blue');
+          },
+          function() {
+            //mouseout
+            $(this).css('background', 'red');
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <h3>4.이벤트 함수</h3>
+    <div class="box1">click</div>
+    <div class="box2">mousedown</div>
+    <div class="box3">mouseup</div>
+    <div class="box4">mouseover</div>
+    <div class="box5">mouseout</div>
+    <div class="box6">hover</div>
+  </body>
+</html>
+<style>
+  div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background: skyblue;
+  }
+</style>

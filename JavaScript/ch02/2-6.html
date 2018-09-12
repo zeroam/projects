@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>2-6</title>
+    <style>
+      html {
+        height: 2000px;
+      }
+
+      .t {
+        position:fixed;
+        right: 10px;
+        top: 10px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+      //브라우저 창크기가 바뀔때
+      $(window).resize(function(){
+        var w = $(this).width();
+        var h = $(this).height();
+
+        $('.w').text(w);
+        $('.h').text(h);
+      });
+      //스크롤이 움직일 때
+      $(window).scroll(function(){
+        var t = $(this).scrollTop();
+        $('.t').text(t);
+      });
+
+    });
+
+    </script>
+  </head>
+  <body>
+    <h3>6.윈도우 이벤트</h3>
+    <h1 class="w">0</h1>
+    <h1 class="h">0</h1>
+    <h1 class="t">0</h1>
+
+
+  </body>
+</html>
