@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3-1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+
+        $("#btn1").click(function(){
+          // AJAX통신
+          $.ajax({
+            url: 'http://chhak.com/ajax/data/data1.json',
+            type: 'get',
+            dataType: 'json',
+            success: function(data){
+              $('tr:nth-child(1)>td:nth-child(2)').text(data.name);
+              $('tr:nth-child(2)>td:nth-child(2)').text(data.price);
+              $('tr:nth-child(3)>td:nth-child(2)').text(data.date);
+              $('tr:nth-child(4)>td:nth-child(2)').text(data.origin);
+            },
+            error: function(){
+              console.log("데이터 요청에 실패했습니다.");
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3>1.AJAX통신</h3>
+    <button id="btn1">데이터 요청하기</button>
+    <table border="1">
+      <tr>
+        <td>name</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>price</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>date</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>origin</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </body>
+</html>

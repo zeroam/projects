@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3-2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        $('a').click(function(e){
+          e.preventDefault();
+
+          $.ajax({
+            url:'http://chhak.com/ajax/data/data2.json',
+            type:'get',
+            dataType:'json',
+            success: function(data){
+              console.log(data);
+              var fruits = data.fruits
+
+              for(var i in fruits) {
+                var obj = fruits[i];
+                var num = parseInt(i)+1
+                $('tr').eq(num).children().eq(0).text(obj.name)
+                $('tr').eq(num).children().eq(1).text(obj.price)
+                $('tr').eq(num).children().eq(2).text(obj.date)
+                $('tr').eq(num).children().eq(3).text(obj.origin)
+              }
+            },
+            error: function(){
+            }
+          });
+
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <h3>2.AJAX통신</h3>
+    <a href="http://naver.com">데이터 요청하기</a>
+    <table border="1">
+      <tr>
+        <td>name</td>
+        <td>price</td>
+        <td>date</td>
+        <td>origin</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+  </body>
+</html>

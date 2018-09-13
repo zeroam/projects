@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3-3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        $('.btn1').click(function(){
+
+          $.get('http://chhak.com/ajax/data/data.xml', function(data){
+            console.log(data);
+            // xml 파싱
+            var fruits = $(data).find('fruits');
+            fruits.each(function() {
+              var name = $(this).find('name').text();
+              var price = $(this).find('price').text();
+              var date = $(this).find('date').text();
+              var origin = $(this).find('origin').text()
+
+              console.log("======================");
+              console.log("name: " +name);
+              console.log("price: " +price);
+              console.log("date: " +date);
+              console.log("origin: " +origin);
+
+            })
+          });
+
+        });
+        $('.btn2').click(function(){
+          var data = {
+            name: '홍길동',
+            id: 'abcd',
+            pw: '1234'
+          };
+
+          $.post('요청주소', data, function(result){
+
+          });
+        });
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <h3>3.AJAX통신 XML</h3>
+    <button class="btn1">데이터 요청하기</button>
+    <button class="btn2">데이터 요청하기</button>
+  </body>
+</html>
