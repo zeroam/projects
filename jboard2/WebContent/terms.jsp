@@ -4,7 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>terms</title>
-		<link rel="stylesheet" href="/jboard2/css/style.css" />		
+		<link rel="stylesheet" href="/jboard2/css/style.css" />	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="/jboard2/js/terms.js"></script>	
 	</head>
 
 	<body>
@@ -14,7 +16,7 @@
 					<caption>사이트 이용약관</caption>
 					<tr>
 						<td>
-							<textarea readonly></textarea>
+							<textarea readonly>${ vo.terms }</textarea>
 							<div>
 								<label><input type="checkbox" name="chk1" />&nbsp;동의합니다.</label>        
 							</div>
@@ -27,7 +29,7 @@
 					<caption>개인정보 취급방침</caption>
 					<tr>
 						<td>
-							<textarea readonly></textarea>
+							<textarea readonly>${ vo.privacy }</textarea>
 							<div>
 								<label><input type="checkbox" name="chk2" />&nbsp;동의합니다.</label>        
 							</div>
@@ -40,7 +42,6 @@
 				<a href="/jboard2/member/login.do" class="btnCancel">취소</a>
 				<a href="/jboard2/member/register.do" class="btnNext">다음</a>
 			</div>
-			
 		</div>
 	</body>
 </html>
