@@ -2,6 +2,7 @@ package kr.co.jboard2.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -17,29 +18,29 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MainController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	//¿ÀºêÁ§Æ® ´ë½Å ÀÎÅÍÆäÀÌ½º·Î ¹ÞÀ» ¼ö ÀÖÀ½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private Map<String, Object> instances = new HashMap<>();
 	
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		//ÄÁÆ®·Ñ·¯ ÃÊ±âÈ­ ÀÛ¾÷
+		//ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½
 		
 		
-		//commandURI.properties ÆÄÀÏ°æ·Î ÃßÃâ
+		//commandURI.properties ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		ServletContext ctx = config.getServletContext();
 		String path = ctx.getRealPath("/WEB-INF") + "/commandURI.properties";
 		
 		
-		//commandURI ÆÄÀÏÀÇ ¾×¼ÇÁÖ¼ÒÀÇ Å¬·¡½º¸¦ properties °´Ã¼·Î »ý¼º
-		Properties prop = new Properties(); // map°ú µ¿ÀÏÇÑ ÀÚ·á±¸Á¶ ÄÃ·º¼Ç
+		//commandURI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ properties ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		Properties prop = new Properties(); // mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·á±¸ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
 		FileInputStream fis = null;
 		
 		try {
-			//commandURI.properties ÆÄÀÏ°ú ÀÔ·Â½ºÆ®¸² ¿¬°á
+			//commandURI.properties ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ô·Â½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			fis = new FileInputStream(path);
 			
-			//ÀÔ·Â½ºÆ®¸²À¸·Î command.properties µ¥ÀÌÅÍ ÀÐ¾î µéÀÌ±â
+			//ï¿½Ô·Â½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ command.properties ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½
 			prop.load(fis);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -54,14 +55,14 @@ public class MainController extends HttpServlet{
 			}
 		}
 		
-		//¸ðµ¨Å¬·¡½ºÀÇ °´Ã¼¸¦ »ý¼ºÇØ¼­ properties¿¡ ÀúÀå
+		//ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ propertiesï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Iterator<?> it = prop.keySet().iterator();
 		
 		while(it.hasNext()) {
 			String k = it.next().toString();
 			String v = prop.getProperty(k);
 			try {
-				//prop °´Ã¼¿¡ ÀúÀåµÈ ¹®ÀÚ¿­Á¤º¸¸¦ °¡Áö°í ÇØ´ç ÆÐÅ°Áö¿¡ ÀÖ´Â Å¬·¡½º¸¦ °´Ã¼·Î »ý¼º
+				//prop ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				Class<?> obj = Class.forName(v);
 				Object instance = obj.newInstance();
 				
@@ -73,7 +74,7 @@ public class MainController extends HttpServlet{
 			
 		}
 		
-	} //init ³¡
+	} //init ï¿½ï¿½
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -92,7 +93,7 @@ public class MainController extends HttpServlet{
 		// http://localhost:8080/ch18/hello.do
 		String root = req.getContextPath();
 		String uri = req.getRequestURI();
-		//properties¿¡¼­ Á¤ÀÇÇØ³õÀº ¾×¼Ç ÁÖ¼Ò
+		//propertiesï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ ï¿½Ö¼ï¿½
 		String command = uri.substring(root.length());
 		
 		CommandAction instance = (CommandAction)instances.get(command);
@@ -101,6 +102,11 @@ public class MainController extends HttpServlet{
 		if(view.startsWith("redirect:")) {
 			String action = view.substring("redirect:".length());
 			resp.sendRedirect(action);
+		} else if(view.startsWith("json:")) {
+			//json:{'result':'1'}
+			String json = view.substring("json:".length());
+			PrintWriter out = resp.getWriter();
+			out.print(json);
 		} else {
 			RequestDispatcher dispatcher = req.getRequestDispatcher(view);
 			dispatcher.forward(req, resp);			

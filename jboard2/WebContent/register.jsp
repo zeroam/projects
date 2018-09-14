@@ -5,6 +5,42 @@
 		<meta charset="UTF-8">
 		<title>회원가입</title>
 		<link rel="stylesheet" href="/jboard2/css/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+		
+			$(function() {
+				//아이디를 입력하고 포커스가 빠질 때 중복체크 요청
+				$('input[name=id]').focusout(function(){
+					/*
+					if(최소 4자리 여부){
+						return false;
+					}
+					if(영어 소문자로 시작하지 않을 경우){
+						return false;
+					}
+					if(한글일경우) {
+						return false;
+					}
+					*/
+					console.log("이벤트 발생");
+					$.ajax({
+						url:'localhost:8181/jboard2/member/checkUser.do',
+						type:'get',
+						dataType:'json',
+						success: function(data){
+							var result = data.result;
+							console.log(result);
+							if(result === '0') {
+								$('.resultId').text('이미 사용중인 아이디 입니다!!');
+							}
+						}
+					});
+				});
+				
+			});
+			
+		</script>
+		
 	</head>
 	<body>
 		<div id="member">
