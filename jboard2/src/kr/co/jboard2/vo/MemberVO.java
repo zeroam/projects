@@ -1,11 +1,10 @@
 package kr.co.jboard2.vo;
 
-import java.util.concurrent.ExecutorCompletionService;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class MemberVO {
 
+	private int seq;
 	private String uid;
 	private String pass;
 	private String name;
@@ -39,6 +38,14 @@ public class MemberVO {
 	}
 	
 	
+	
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
 	public String getUid() {
 		return uid;
 	}

@@ -5,11 +5,18 @@
 		<meta charset="UTF-8">
 		<title>로그인</title>
 		<link rel="stylesheet" href="/jboard2/css/style.css" />
+		<script>
+			var result = "${result}";
+			
+			if(result == "fail") {
+				alert("아이디와 패스워드를 확인하십시오");
+			}
+		</script>
 	</head>
 	<body>
 		<div id="member">
 			<section class="login">		
-				<form action="#" method="get">
+				<form action="/jboard2/member/login.do" method="post">
 					<table>
 						<tr>
 							<td><img src="/jboard2/img/login_ico_id.png" alt="아이디" /></td>
