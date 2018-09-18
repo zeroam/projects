@@ -18,7 +18,7 @@
 		conn = new ConnectDataBase();
 		ResultSet rs = conn.executeQuery(sql);
 
-		//5단계
+		
 		if (rs.next()) {
 			//입력한 아이디와 비밀번호에 해당하는 회원이 있는 경우
 			MemberVO ur = MemberVO.initMemberVO(rs);
@@ -36,7 +36,7 @@
 		out.println(e.getMessage());
 		e.printStackTrace();
 	} finally {
-		//6단계
+		
 		if(conn != null) conn.close();
 	}
 %>
