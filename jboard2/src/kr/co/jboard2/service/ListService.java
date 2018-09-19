@@ -1,10 +1,14 @@
 package kr.co.jboard2.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.co.jboard2.controller.CommandAction;
+import kr.co.jboard2.dao.BoardDAO;
+import kr.co.jboard2.vo.BoardVO;
 
 public class ListService implements CommandAction {
 
@@ -16,7 +20,10 @@ public class ListService implements CommandAction {
 			return "redirect:/jboard2/member/login.do";
 		}
 		
-		//arraylist로 boardVO 객체 받기, 리퀘스트 속성값?
+		//arraylist로 boardVO 객체 받기
+		BoardDAO dao = BoardDAO.getInstance();
+		List<BoardVO> voList = dao.list();
+		req.setAttribute("list", voList);
 		
 		return "/list.jsp";
 	}

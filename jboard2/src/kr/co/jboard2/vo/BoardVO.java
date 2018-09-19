@@ -1,5 +1,8 @@
 package kr.co.jboard2.vo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class BoardVO {
 
 	private int seq;
@@ -13,6 +16,25 @@ public class BoardVO {
 	private String uid;
 	private String regip;
 	private String rdate;
+	
+	public BoardVO() {
+		
+	}
+	
+	public BoardVO(ResultSet rs) throws SQLException {
+		this.seq = rs.getInt(1);
+		this.parent = rs.getInt(2);
+		this.comment = rs.getInt(3);
+		this.cate = rs.getString(4);
+		this.title = rs.getString(5);
+		this.contents = rs.getString(6);
+		this.file = rs.getInt(7);
+		this.hit = rs.getInt(8);
+		this.uid = rs.getString(9);
+		this.regip = rs.getString(10);
+		this.rdate = rs.getString(11);	
+	}
+	
 	public int getSeq() {
 		return seq;
 	}

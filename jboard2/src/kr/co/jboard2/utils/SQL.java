@@ -8,10 +8,14 @@ public class SQL {
 	public static final String SELECT_CHECK_HP = "SELECT COUNT(*) FROM JB_MEMBER WHERE hp=?";
 	public static final String SELECT_CHECK_EMAIL = "SELECT COUNT(*) FROM JB_MEMBER WHERE email=?";
 	public static final String SELECT_UID_PASS = "SELECT * FROM JB_MEMBER WHERE uid=? AND pass=?";
-	public static final String INSERT_BOARD = "INSERT INTO JB_BOARD (cate, title, contents, uid, regip, rdate) VALUES (?,?,?,?,?,NOW());";
 	public static final String INSERT_MEMBER = 
 				"INSERT INTO JB_MEMBER "+
 				"(uid, pass, name, nick, email, hp, grade, zip, addr1, addr2, regip, rdate) "+
 				"VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW())";
 
+	public static final String INSERT_BOARD = "INSERT INTO JB_BOARD (cate, title, contents, uid, regip, rdate) VALUES (?,?,?,?,?,NOW());";
+	public static final String SELECT_BOARD = "SELECT * FROM JB_BOARD ORDER BY seq DESC;";
+	public static final String VIEW_BOARD = "SELECT * FROM JB_BOARD WHERE seq=?;";
+	
+	
 }
