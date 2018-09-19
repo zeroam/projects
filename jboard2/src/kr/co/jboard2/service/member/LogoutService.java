@@ -11,6 +11,7 @@ public class LogoutService implements CommandAction{
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
 		HttpSession session = req.getSession();
+		//세션 만료
 		session.invalidate();
 		return "redirect:/jboard2/member/login.do";
 	}

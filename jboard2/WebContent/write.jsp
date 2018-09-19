@@ -10,7 +10,9 @@
 		<div id="board">
 			<h3>글쓰기</h3>
 			<div class="write">
-				<form action="#" method="post">
+				<form action="/jboard2/write.do" method="post">
+				<input type="hidden" name="cate" value="free"/>
+				<input type="hidden" name="uid" value="${member.uid }"/>
 					<table>
 						<tr>
 							<td>제목</td>
@@ -30,7 +32,7 @@
 						</tr>
 					</table>
 					<div class="btns">
-						<a href="#" class="cancel">취소</a>
+						<a href="/jboard2/list.do" class="cancel">취소</a>
 						<input type="submit" class="submit" value="작성완료" />
 					</div>
 				</form>

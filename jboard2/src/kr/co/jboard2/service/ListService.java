@@ -16,6 +16,8 @@ public class ListService implements CommandAction {
 			return "redirect:/jboard2/member/login.do";
 		}
 		
+		//arraylist로 boardVO 객체 받기, 리퀘스트 속성값?
+		
 		return "/list.jsp";
 	}
 

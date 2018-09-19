@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +12,7 @@
 			<h3>글목록</h3>
 			<!-- 리스트 -->
 			<div class="list">
-				<p class="logout">${member.nick }님! 반갑습니다. <a href="/jboard2/member/logout.do">[로그아웃]</a><p>
+				<p class="logout">${ sessionScope.member.nick }님! 반갑습니다. <a href="/jboard2/member/logout.do">[로그아웃]</a><p>
 				<table>
 					<tr>
 						<td>번호</td>
@@ -20,7 +21,6 @@
 						<td>날짜</td>
 						<td>조회</td>
 					</tr>
-				
 					<tr>
 						<td>1</td>
 						<td><a href="#">테스트 제목입니다.</a>&nbsp;[3]</td>
@@ -38,7 +38,7 @@
 				<a href="#" class="next">다음</a>
 				</span>
 			</nav>
-			<a href="#" class="btnWrite">글쓰기</a>
+			<a href="/jboard2/write.do" class="btnWrite">글쓰기</a>
 		</div>
 	</body>
 

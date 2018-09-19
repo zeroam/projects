@@ -10,7 +10,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 public class DBConfig {
 
-	private static final String HOST = "jdbc:mysql://192.168.0.178:3306/jcw";
+	private static final String HOST = "jdbc:mysql://192.168.0.23:3306/jcw";
 	private static final String USER = "jcw";
 	private static final String PASS = "1234";
 	
