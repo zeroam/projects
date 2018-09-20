@@ -23,29 +23,37 @@
 					</tr>
 					<c:forEach var="vo" items="${ list }">
 						<tr>
-							<td>${vo.seq }</td>
+							<td>${startNum }</td>
 							<td><a href="/jboard2/view.do?seq=${vo.seq}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
 							<td>${vo.uid}</td>
 							<td>${vo.rdate.substring(2,10)}</td>
 							<td>${vo.hit}</td>
 						</tr>
+						<c:set var="startNum" value="${startNum-1}" />
 					</c:forEach>
 				</table>
 			</div>
 			<!-- 페이징 -->
 			<nav class="paging">
 				<span> 
-				<a href="#" class="prev">이전</a>
-				<a href="#" class="num">1</a>
-				<a href="#" class="next">다음</a>
+				<c:if test="${groupStart > 1}">
+					<a href="/jboard2/list.do?page=${groupStart-1}" class="prev">이전</a>
+				</c:if>
+				<a href="/jboard2/list.do?page=${prepage}"><</a>
+				<c:forEach var="i" begin="${groupStart}" end="${groupEnd}">
+					<a href="/jboard2/list.do?page=${i}" class="${i==page ? 'current':''} num">${i}</a>
+				</c:forEach>
+				<a href="/jboard2/list.do?page=${postpage}">></a>
+				<c:if test="${groupEnd < total_page }">
+					<a href="/jboard2/list.do?page=${groupEnd+1}" class="next">다음</a>
+				</c:if>
+				
 				</span>
 			</nav>
 			<a href="/jboard2/write.do" class="btnWrite">글쓰기</a>
 		</div>
 	</body>
-
 </html>
-
 
 
 

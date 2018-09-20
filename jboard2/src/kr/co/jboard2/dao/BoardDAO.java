@@ -19,6 +19,8 @@ public class BoardDAO {
 	}
 	private BoardDAO() {}
 	
+	
+	
 	//드라이버 준비
 	private Connection conn = null;
 	private Statement stmt = null;
@@ -26,16 +28,20 @@ public class BoardDAO {
 	private ResultSet rs = null;
 	
 	//글 목록 메소드
-	public ArrayList<BoardVO> list() {
+	public ArrayList<BoardVO> list(int page) {
 		//리스트 배열
 		ArrayList<BoardVO> voList = new ArrayList<>();
 		BoardVO vo = null;
 		try {
+			//게시글 출력 시작할 번호
+			int num = (page-1)*10;
+			
 			conn = DBConfig.getConnection();
 			
-			stmt = conn.createStatement();
+			psmt = conn.prepareStatement(SQL.SELECT_BOARD);
+			psmt.setInt(1, num);
 			
-			rs = stmt.executeQuery(SQL.SELECT_BOARD);
+			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
 				//게시판 객체 초기화
@@ -96,7 +102,7 @@ public class BoardDAO {
 		} catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
-			DBConfig.close(psmt);
+			DBConfig.close(rs);
 			DBConfig.close(psmt);
 			DBConfig.close(conn);
 		}
@@ -109,4 +115,65 @@ public class BoardDAO {
 	
 	//글삭제 메소드
 	public void delete() {}
+	
+	//전체 페이지 계산
+	public int getTotalPage() {
+		//전체 페이지
+		int total_page = 1;
+		
+		try {
+			conn = DBConfig.getConnection();
+					
+			psmt = conn.prepareStatement(SQL.GET_TOTAL_BOARD);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				//전체 게시글 숫자
+				int total_board = rs.getInt(1);
+				
+				//10으로 나누어 떨어질 경우
+				if(total_board%10 == 0) {
+					total_page = total_board/10;
+				//10으로 안나누어 떨어질 경우
+				} else {
+					total_page = total_board/10 + 1;
+				}
+			}
+		} catch(SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(rs);
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
+		return total_page;
+	}
+	
+	//게시글 시작 번호 구하기
+	public int getBoardNumber(int page) {
+		int startNum = 1;
+		
+		try {
+			conn = DBConfig.getConnection();
+					
+			psmt = conn.prepareStatement(SQL.GET_TOTAL_BOARD);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				//전체 게시글 숫자
+				int total_board = rs.getInt(1);
+				startNum = total_board - (page-1)*10;
+			}
+		} catch(SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(rs);
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
+		
+		return startNum;
+	}
 }

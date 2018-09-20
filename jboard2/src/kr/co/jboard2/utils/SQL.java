@@ -14,8 +14,8 @@ public class SQL {
 				"VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW())";
 
 	public static final String INSERT_BOARD = "INSERT INTO JB_BOARD (cate, title, contents, uid, regip, rdate) VALUES (?,?,?,?,?,NOW());";
-	public static final String SELECT_BOARD = "SELECT * FROM JB_BOARD ORDER BY seq DESC;";
+	public static final String SELECT_BOARD = "SELECT * FROM JB_BOARD ORDER BY seq DESC LIMIT ?, 10;";
 	public static final String VIEW_BOARD = "SELECT * FROM JB_BOARD WHERE seq=?;";
-	
+	public static final String GET_TOTAL_BOARD = "SELECT COUNT(*) FROM JB_BOARD;";
 	
 }

@@ -34,7 +34,7 @@
 						</tr>
 					</table>
 					<div class="btns">
-						<a href="#" class="cancel del">삭제</a>
+						<a href="/jboard2/delete.do" class="cancel del">삭제</a>
 						<a href="#" class="cancel mod">수정</a>
 						<a href="/jboard2/list.do" class="cancel">목록</a>
 					</div>
