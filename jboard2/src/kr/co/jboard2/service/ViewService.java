@@ -12,6 +12,7 @@ public class ViewService implements CommandAction {
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
 		String seq = req.getParameter("seq");
+		String pg = req.getParameter("page");
 		
 		//게시글 vo 객체 얻기
 		BoardDAO dao = BoardDAO.getInstance();
@@ -19,6 +20,7 @@ public class ViewService implements CommandAction {
 		
 		//리퀘스트 속성값 부여
 		req.setAttribute("vo", vo);
+		req.setAttribute("page", pg);
 		
 		return "/view.jsp";
 	}

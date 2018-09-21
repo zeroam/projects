@@ -23,9 +23,10 @@
 					</tr>
 					<c:forEach var="vo" items="${ list }">
 						<tr>
-							<td>${startNum }</td>
-							<td><a href="/jboard2/view.do?seq=${vo.seq}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
-							<td>${vo.uid}</td>
+							<td>${startNum}</td>
+							<!-- vo객체의 seq와 현재 페이지를 기반으로 데이터 요청 -->
+							<td><a href="/jboard2/view.do?seq=${vo.seq}&page=${page}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
+							<td>${vo.nick}</td>
 							<td>${vo.rdate.substring(2,10)}</td>
 							<td>${vo.hit}</td>
 						</tr>

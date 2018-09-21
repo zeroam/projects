@@ -16,6 +16,7 @@ public class BoardVO {
 	private String uid;
 	private String regip;
 	private String rdate;
+	private String nick;
 	
 	public BoardVO() {
 		
@@ -32,7 +33,7 @@ public class BoardVO {
 		this.hit = rs.getInt(8);
 		this.uid = rs.getString(9);
 		this.regip = rs.getString(10);
-		this.rdate = rs.getString(11);	
+		this.rdate = rs.getString(11);
 	}
 	
 	public int getSeq() {
@@ -100,6 +101,12 @@ public class BoardVO {
 	}
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
+	}
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	
 	

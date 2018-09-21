@@ -19,8 +19,6 @@ public class BoardDAO {
 	}
 	private BoardDAO() {}
 	
-	
-	
 	//드라이버 준비
 	private Connection conn = null;
 	private Statement stmt = null;
@@ -46,6 +44,8 @@ public class BoardDAO {
 			while(rs.next()) {
 				//게시판 객체 초기화
 				vo = new BoardVO(rs);
+				//JOIN 문으로 얻은 nick값 넣기
+				vo.setNick(rs.getString(12));
 				//게시판 객체 리스트 배열에 추가하기
 				voList.add(vo);
 			}
@@ -114,7 +114,22 @@ public class BoardDAO {
 	public void modify() {}
 	
 	//글삭제 메소드
-	public void delete() {}
+	public void delete(String seq) {
+		try {
+			conn = DBConfig.getConnection();
+			
+			psmt = conn.prepareStatement(SQL.DELETE_BOARD);
+			psmt.setString(1, seq);
+			
+			psmt.executeUpdate();
+		} catch(SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
+		
+	}
 	
 	//전체 페이지 계산
 	public int getTotalPage() {
@@ -173,7 +188,6 @@ public class BoardDAO {
 			DBConfig.close(psmt);
 			DBConfig.close(conn);
 		}
-		
 		return startNum;
 	}
 }

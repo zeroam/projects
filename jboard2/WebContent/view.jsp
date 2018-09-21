@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,10 +15,11 @@
 					<table>
 						<tr>
 							<td>제목</td>
-							<td><input type="text" name="subject" value="${vo.title}" readonly />
+							<td>
+								<input type="text" name="subject" value="${vo.title}" readonly />
 							</td>
 						</tr>
-						
+						<c:if test="${vo.file > 0}">
 						<tr>
 							<td>첨부파일</td>
 							<td>
@@ -25,7 +27,7 @@
 								<span></span>
 							</td>
 						</tr>
-						
+						</c:if>
 						<tr>
 							<td>내용</td>
 							<td>
@@ -34,9 +36,9 @@
 						</tr>
 					</table>
 					<div class="btns">
-						<a href="/jboard2/delete.do" class="cancel del">삭제</a>
+						<a href="/jboard2/delete.do?seq=${vo.seq}" class="cancel del">삭제</a>
 						<a href="#" class="cancel mod">수정</a>
-						<a href="/jboard2/list.do" class="cancel">목록</a>
+						<a href="/jboard2/list.do?page=${page}" class="cancel">목록</a>
 					</div>
 				</form>
 			</div><!-- view 끝 -->

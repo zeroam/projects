@@ -44,8 +44,14 @@ public class WriteService implements CommandAction {
 			
 			return "redirect:/jboard2/list.do";
 			
-		} else {			
-			return "/write.jsp";
+		} else {
+			//로그인 여부 확인
+			HttpSession session = req.getSession();
+			if(session.getAttribute("member") == null) {
+				return "redirect:/jboard2/member/login.do";
+			} else {
+				return "/write.jsp";				
+			}
 		}
 		
 	}
