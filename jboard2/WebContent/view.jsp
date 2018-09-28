@@ -97,7 +97,6 @@
 			</section>
 		</div><!-- board 끝 -->
 	</body>
-
 </html>
 
 

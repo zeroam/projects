@@ -10,7 +10,7 @@
 		<div id="board">
 			<h3>글쓰기</h3>
 			<div class="write">
-				<form action="/jboard2/write.do" method="post">
+				<form action="/jboard2/write.do" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="cate" value="free"/>
 				<input type="hidden" name="uid" value="${member.uid }"/>
 					<table>
