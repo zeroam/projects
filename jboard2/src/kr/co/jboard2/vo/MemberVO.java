@@ -37,7 +37,7 @@ public class MemberVO {
 		this.regip = req.getRemoteAddr();
 	}
 	
-	
+	//get, set 메소드 ...
 	
 	public int getSeq() {
 		return seq;

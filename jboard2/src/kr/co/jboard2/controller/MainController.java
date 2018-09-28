@@ -18,29 +18,28 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MainController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	//������Ʈ ��� �������̽��� ���� �� ����
 	private Map<String, Object> instances = new HashMap<>();
 	
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		//��Ʈ�ѷ� �ʱ�ȭ �۾�
+		//컨트롤러 초기화 작업
 		
 		
-		//commandURI.properties ���ϰ�� ����
+		//commandURI.properties 파일경로 추출
 		ServletContext ctx = config.getServletContext();
 		String path = ctx.getRealPath("/WEB-INF") + "/commandURI.properties";
 		
 		
-		//commandURI ������ �׼��ּ��� Ŭ������ properties ��ü�� ����
-		Properties prop = new Properties(); // map�� ������ �ڷᱸ�� �÷���
+		//properties 객체 생성
+		Properties prop = new Properties(); // map과 동일한 자료구조 컬렉션
 		FileInputStream fis = null;
 		
 		try {
-			//commandURI.properties ���ϰ� �Է½�Ʈ�� ����
+			//commandURI.properties 파일과 입력 스트림 연결
 			fis = new FileInputStream(path);
 			
-			//�Է½�Ʈ������ command.properties ������ �о� ���̱�
+			//입력스트림으로 commandURI.properties 데이터 읽어 들이기
 			prop.load(fis);
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -55,14 +54,14 @@ public class MainController extends HttpServlet{
 			}
 		}
 		
-		//��Ŭ������ ��ü�� �����ؼ� properties�� ����
+		//모델클래스 객체를 생성해서 properties에 저장
 		Iterator<?> it = prop.keySet().iterator();
 		
 		while(it.hasNext()) {
 			String k = it.next().toString();
 			String v = prop.getProperty(k);
 			try {
-				//prop ��ü�� ����� ���ڿ������� ������ �ش� ��Ű���� �ִ� Ŭ������ ��ü�� ����
+				//prop 객체에 저장된 문자열 정보를 가지고 해당 패키지에 있는 클래스를 객체로 생성
 				Class<?> obj = Class.forName(v);
 				Object instance = obj.newInstance();
 				
@@ -74,7 +73,7 @@ public class MainController extends HttpServlet{
 			
 		}
 		
-	} //init ��
+	} //init 끝
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -93,7 +92,6 @@ public class MainController extends HttpServlet{
 		// http://localhost:8080/ch18/hello.do
 		String root = req.getContextPath();
 		String uri = req.getRequestURI();
-		//properties���� �����س��� �׼� �ּ�
 		String command = uri.substring(root.length());
 		
 		CommandAction instance = (CommandAction)instances.get(command);
@@ -111,8 +109,5 @@ public class MainController extends HttpServlet{
 			RequestDispatcher dispatcher = req.getRequestDispatcher(view);
 			dispatcher.forward(req, resp);			
 		}
-		
-		
 	}
-	
 }

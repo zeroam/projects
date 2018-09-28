@@ -69,5 +69,4 @@ public class ListService implements CommandAction {
 		
 		return "/list.jsp";
 	}
-
 }

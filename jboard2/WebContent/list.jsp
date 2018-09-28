@@ -1,11 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script>var login = Boolean("${login}");</script>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
 		<title>글목록</title> 
 		<link rel="stylesheet" href="/jboard2/css/style.css" />
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="/jboard2/js/listLoginCheck.js"></script>
 	</head>
 	<body>
 		<div id="board">
@@ -25,7 +28,7 @@
 						<tr>
 							<td>${startNum}</td>
 							<!-- vo객체의 seq와 현재 페이지를 기반으로 데이터 요청 -->
-							<td><a href="/jboard2/view.do?seq=${vo.seq}&page=${page}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
+							<td><a href="/jboard2/view.do?seq=${vo.seq}&page=${page}" class="title">${vo.title}</a>&nbsp;[${vo.comment}]</td>
 							<td>${vo.nick}</td>
 							<td>${vo.rdate.substring(2,10)}</td>
 							<td>${vo.hit}</td>
@@ -55,12 +58,3 @@
 		</div>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-

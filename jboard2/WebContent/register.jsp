@@ -5,9 +5,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <link rel="stylesheet" href="/jboard2/css/style.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/jboard2/js/validation.js"></script>
 <script src="/jboard2/js/check.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

@@ -6,6 +6,15 @@
 		<meta charset="UTF-8" />
 		<title>글보기</title> 
 		<link rel="stylesheet" href="/jboard2/css/style.css" />
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(function() {
+				//게시글 삭제 확인
+				$('.del').click(function() {
+					return confirm('정말 삭제하시겠습니까?');
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="board">
@@ -36,8 +45,10 @@
 						</tr>
 					</table>
 					<div class="btns">
-						<a href="/jboard2/delete.do?seq=${vo.seq}" class="cancel del">삭제</a>
-						<a href="#" class="cancel mod">수정</a>
+						<c:if test="${ member.uid == vo.uid }">
+							<a href="/jboard2/delete.do?seq=${vo.seq}" class="cancel del">삭제</a>
+							<a href="/jboard2/update.do?seq=${vo.seq}&page=${page}" class="cancel mod">수정</a>
+						</c:if>
 						<a href="/jboard2/list.do?page=${page}" class="cancel">목록</a>
 					</div>
 				</form>
@@ -46,22 +57,24 @@
 			<!-- 댓글리스트 -->
 			<section class="comments">
 				<h3>댓글목록</h3>
-				
-				<div class="comment">
-					<span>
-						<span>홍길동</span>
-						<span>18-03-01</span>
-					</span>
-					<textarea>테스트 댓글입니다.</textarea>
-					<div>
-						<a href="#" class="del">삭제</a>
-						<a href="#" class="mod">수정</a>
+				<c:forEach var="comment" items="${comments}">				
+					<div class="comment">
+						<span>
+							<span>${comment.nick}</span>
+							<span>${comment.rdate.substring(2,10) }</span>
+						</span>
+						<textarea>${comment.contents}</textarea>
+						<div>
+							<a href="/jboard2/commentDelete.do?seq=${comment.seq}&parent=${comment.parent}&page=${page}" class="del")>삭제</a>
+							<a href="#" class="mod">수정</a>
+						</div>
 					</div>
-				</div>
-			
-				<p class="empty">
-					등록된 댓글이 없습니다.
-				</p>
+				</c:forEach>
+				<c:if test="${comments == '[]'}">				
+					<p class="empty">
+						등록된 댓글이 없습니다.
+					</p>
+				</c:if>
 				
 			</section>
 			
@@ -69,8 +82,12 @@
 			<section class="comment_write">
 				<h3>댓글쓰기</h3>
 				<div>
-					<form action="#" method="post">
-						<textarea name="comment" rows="5"></textarea>
+					<form action="/jboard2/comment.do" method="post">
+						<input type="hidden" name="page" value="${page}" />
+						<input type="hidden" name="parent" value="${vo.seq}" />
+						<input type="hidden" name="cate" value="${vo.cate}" />
+						<input type="hidden" name="uid" value="${member.uid}" />
+						<textarea name="comment" rows="5" required></textarea>
 						<div class="btns">
 							<a href="#" class="cancel">취소</a>
 							<input type="submit" class="submit" value="작성완료" />

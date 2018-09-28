@@ -6,21 +6,25 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.jboard2.controller.CommandAction;
 import kr.co.jboard2.dao.BoardDAO;
 
-public class DeleteService implements CommandAction {
+public class CommentDeleteService implements CommandAction {
 
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
-		//파라미터로 글 번호 값 가져옴
+		//댓글 seq, parent 값 가져오기
 		String seq = req.getParameter("seq");
-		if(seq != null) {
+		String parent = req.getParameter("parent");
+		String page = req.getParameter("page");
+		
+		if(seq!=null) {
 			BoardDAO dao = BoardDAO.getInstance();
-			//dao 객체의 delete 실행
+			//댓글 삭제
 			dao.delete(seq);
-			
-			return "redirect:/jboard2/list.do";
-		} else {
-			return "/jboard2/view.do";
+			//댓글 수 감소
+			dao.decreaseCommentNo(parent);
 		}
 		
+		
+		return "/view.do?seq="+parent+"&page"+page;
 	}
+
 }

@@ -15,8 +15,9 @@ public class LoginService implements CommandAction  {
 		
 		String method = req.getMethod();
 		HttpSession session = req.getSession();
+		//전송 방식이 POST 방식일 때
 		if(method.equals("POST")) {
-			
+			//id, pw값 파라미터로 받기
 			String id = req.getParameter("id");
 			String pw = req.getParameter("pw");
 			
@@ -26,6 +27,8 @@ public class LoginService implements CommandAction  {
 			if(vo != null) {
 				//세션값에 멤버 객체 넣기
 				session.setAttribute("member", vo);
+				//로그인 여부
+				session.setAttribute("login", true);
 				return "redirect:/jboard2/list.do";
 			} else {
 				return "redirect:/jboard2/member/login.do?result=fail";				

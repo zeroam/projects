@@ -29,7 +29,7 @@ public class MemberDAO {
 	private PreparedStatement psmt = null;
 	private ResultSet rs = null;
 
-	
+	//id, pass값을 가진 데이터 불러오기
 	public MemberVO login(String id, String pw) {
 		MemberVO vo = null;
 		try {
@@ -75,17 +75,12 @@ public class MemberDAO {
 		String privacy = null;
 		TermsVO termsVO = new TermsVO();
 		try {
-
-			// 2단계
 			conn = DBConfig.getConnection();
 
-			// 3단계
 			stmt = conn.createStatement();
 
-			// 4단계
 			rs = stmt.executeQuery(SQL.SELECT_TERMS);
 
-			// 5단계
 			if (rs.next()) {
 				terms = rs.getString(1);
 				privacy = rs.getString(2);
@@ -98,7 +93,6 @@ public class MemberDAO {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {
-			// 6단계
 			DBConfig.close(rs);
 			DBConfig.close(stmt);
 			DBConfig.close(conn);
@@ -112,10 +106,8 @@ public class MemberDAO {
 		boolean result = false;
 		
 		try {
-			//2단계
 			conn = DBConfig.getConnection();
 			
-			//3단계
 			psmt = conn.prepareStatement(SQL.INSERT_MEMBER);
 			psmt.setString(1, memberVO.getUid());
 			psmt.setString(2, memberVO.getPass());
@@ -129,14 +121,12 @@ public class MemberDAO {
 			psmt.setString(10, memberVO.getAddr2());
 			psmt.setString(11, memberVO.getRegip());
 			
-			//4단계
 			psmt.executeUpdate();
 			
 			result = true;
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {
-			//6단계
 			DBConfig.close(psmt);
 			DBConfig.close(conn);
 		}
@@ -150,11 +140,8 @@ public class MemberDAO {
 
 		
 		try {
-
-			// 2단계
 			conn = DBConfig.getConnection();
 
-			// 3단계
 			switch(check) {
 			case "uid":
 				psmt = conn.prepareStatement(SQL.SELECT_CHECK_ID);
@@ -173,23 +160,18 @@ public class MemberDAO {
 			} 
 			psmt.setString(1, value);
 
-			// 4단계
 			rs = psmt.executeQuery();
 
-			// 5단계
 			if (rs.next()) {
 				result = rs.getInt(1);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {
-			// 6단계
 			DBConfig.close(rs);
 			DBConfig.close(stmt);
 			DBConfig.close(conn);
 		}
 		return result;
 	}
-	
-	
 }

@@ -15,6 +15,7 @@ public class TermsService implements CommandAction {
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		TermsVO termsVO = dao.terms();
+		//request 객체에 속성값 부여
 		req.setAttribute("vo", termsVO);		
 		
 		return "/terms.jsp";

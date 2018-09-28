@@ -1,5 +1,7 @@
 package kr.co.jboard2.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,9 +20,14 @@ public class ViewService implements CommandAction {
 		BoardDAO dao = BoardDAO.getInstance();
 		BoardVO vo = dao.view(seq);
 		
+		//댓글 리스트 얻기
+		int parent = Integer.parseInt(seq);
+		List<BoardVO> comments = dao.commentList(parent);
+		
 		//리퀘스트 속성값 부여
 		req.setAttribute("vo", vo);
 		req.setAttribute("page", pg);
+		req.setAttribute("comments", comments);
 		
 		return "/view.jsp";
 	}

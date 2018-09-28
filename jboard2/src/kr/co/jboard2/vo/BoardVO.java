@@ -36,6 +36,7 @@ public class BoardVO {
 		this.rdate = rs.getString(11);
 	}
 	
+	
 	public int getSeq() {
 		return seq;
 	}

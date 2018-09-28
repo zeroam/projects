@@ -19,20 +19,22 @@ public class RegistService implements CommandAction  {
 			return "/register.jsp";			
 		} else {
 			//register 페이지에서 회원가입을 할 경우
-			
 			boolean result = false;
 			
 			MemberDAO memberDAO = MemberDAO.getInstance();
 			try {
 				MemberVO memberVO = new MemberVO(req);
+				//데이터베이스에 회원 등록이 성공적으로 되었을 때, true값 반환
 				result = memberDAO.register(memberVO);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
 			if(result) {
+				//회원 등록이 정상적으로 되었을 때
 				return "redirect:/jboard2/member/login.do";				
 			} else {
+				//회원 등록에 실패했을 때
 				return "/register.jsp";
 			}
 		}	

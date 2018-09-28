@@ -20,8 +20,7 @@ public class CheckService implements CommandAction {
 		
 		result = dao.check(check, value);
 		
-//		result = dao.checkUser(value);			
-		
+		//json 포맷 문자열 생성
 		String json = "{\"result\":"+result+"}";
 		
 		return "json:"+json;
