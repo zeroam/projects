@@ -32,8 +32,8 @@
 						<tr>
 							<td>첨부파일</td>
 							<td>
-								<a href="#"></a>
-								<span></span>
+								<a href="#">${fvo.oldName}</a>
+								<span>${fvo.download}회 다운로드</span>
 							</td>
 						</tr>
 						</c:if>

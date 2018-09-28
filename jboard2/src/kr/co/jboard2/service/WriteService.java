@@ -49,22 +49,34 @@ public class WriteService implements CommandAction {
 			vo.setTitle(mr.getParameter("subject"));
 			vo.setContents(mr.getParameter("content"));
 			vo.setUid(mr.getParameter("uid"));
+			vo.setFile(0);
 			vo.setRegip(req.getRemoteAddr());
-			
+
 			String uid = mr.getParameter("uid");
 			String file = mr.getFilesystemName("file");
 			
+			if(file != null) {
+				vo.setFile(1);
+			}
+			
 			//데이터 베이스에 글 등록
 			BoardDAO dao = BoardDAO.getInstance();
-			dao.write(vo);
+			int seq = dao.write(vo);
 			
-			//파일명 수정하기
-			String uuid = makeUUID(file, uid);
-			try {
-				updateFileName(path, file, uuid);
-			} catch (Exception e) {
-				e.printStackTrace();
+			//파일 첨부 했을 때
+			if(file != null) {
+				//파일명 수정하기
+				String uuid = makeUUID(file, uid);
+				try {
+					updateFileName(path, file, uuid);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				//파일 정보 데이터 베이스에 등록
+				dao.insertFile(seq, file, uuid);
+				
 			}
+			
 			
 			return "redirect:/jboard2/list.do";	
 		} else {

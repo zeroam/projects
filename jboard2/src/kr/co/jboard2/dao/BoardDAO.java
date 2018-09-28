@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import kr.co.jboard2.utils.DBConfig;
 import kr.co.jboard2.utils.SQL;
 import kr.co.jboard2.vo.BoardVO;
+import kr.co.jboard2.vo.FileVO;
 
 public class BoardDAO {
 	// 싱글톤 객체
@@ -63,7 +64,7 @@ public class BoardDAO {
 	}
 
 	// 글쓰기 메소드
-	public void write(BoardVO vo) {
+	public int write(BoardVO vo) {
 		try {
 			conn = DBConfig.getConnection();
 
@@ -71,8 +72,9 @@ public class BoardDAO {
 			psmt.setString(1, vo.getCate());
 			psmt.setString(2, vo.getTitle());
 			psmt.setString(3, vo.getContents());
-			psmt.setString(4, vo.getUid());
-			psmt.setString(5, vo.getRegip());
+			psmt.setInt(4, vo.getFile());
+			psmt.setString(5, vo.getUid());
+			psmt.setString(6, vo.getRegip());
 
 			psmt.executeUpdate();
 
@@ -82,7 +84,26 @@ public class BoardDAO {
 			DBConfig.close(psmt);
 			DBConfig.close(conn);
 		}
-
+		return getMaxSeq();
+	}
+	
+	//파일 등록
+	public void insertFile(int parent, String oldName, String newName) {
+		try {
+			conn = DBConfig.getConnection();
+			
+			psmt = conn.prepareStatement(SQL.INSERT_FILE);
+			psmt.setInt(1, parent);
+			psmt.setString(2, oldName);
+			psmt.setString(3, newName);
+			
+			psmt.executeUpdate();
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
 	}
 
 	// 글보기 메소드
@@ -101,7 +122,41 @@ public class BoardDAO {
 				vo = new BoardVO(rs);
 			}
 			
+			//조회수 증가
 			updateHit(seq);
+
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(rs);
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
+
+		return vo;
+	}
+	
+	// 파일 객체 얻기
+	public FileVO getFile(int parent) {
+		FileVO vo = null;
+
+		try {
+			conn = DBConfig.getConnection();
+
+			psmt = conn.prepareStatement(SQL.SELECT_FILE);
+			psmt.setInt(1, parent);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				vo = new FileVO();
+				vo.setSeq(rs.getInt(1));
+				vo.setParent(rs.getInt(2));
+				vo.setOldName(rs.getString(3));
+				vo.setNewName(rs.getString(4));
+				vo.setDownload(rs.getInt(5));
+			}
+			
 
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
@@ -163,7 +218,7 @@ public class BoardDAO {
 			psmt = conn.prepareStatement(SQL.UPDATE_HIT);
 			psmt.setString(1, seq);
 			
-			psmt.executeQuery();
+			psmt.executeUpdate();
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -309,5 +364,23 @@ public class BoardDAO {
 			DBConfig.close(conn);
 		}
 		return startNum;
+	}
+	
+	public int getMaxSeq() {
+		int max = 0;
+		
+		try {
+			conn = DBConfig.getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(SQL.SELECT_MAX_SEQ);
+			
+			if(rs.next()) {
+				max = rs.getInt(1);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return max;		
 	}
 }
