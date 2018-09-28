@@ -27,9 +27,9 @@ public class ViewService implements CommandAction {
 		int parent = Integer.parseInt(seq);
 		List<BoardVO> comments = dao.commentList(parent);
 		
-		//파일 객체 얻기
 		//파일 첨부 여부 확인
 		if(vo.getFile() == 1) {
+			//파일 객체 얻기
 			fvo = dao.getFile(vo.getSeq());
 		}
 		

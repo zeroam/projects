@@ -32,7 +32,7 @@
 						<tr>
 							<td>첨부파일</td>
 							<td>
-								<a href="#">${fvo.oldName}</a>
+								<a href="/jboard2/filedown.do?parent=${fvo.parent}">${fvo.oldName}</a>
 								<span>${fvo.download}회 다운로드</span>
 							</td>
 						</tr>

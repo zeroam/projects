@@ -4,7 +4,6 @@ package kr.co.jboard2.service;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -74,7 +73,6 @@ public class WriteService implements CommandAction {
 				}
 				//파일 정보 데이터 베이스에 등록
 				dao.insertFile(seq, file, uuid);
-				
 			}
 			
 			
