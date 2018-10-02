@@ -17,7 +17,6 @@
       #wrapper {
         width : 980px;
         height: auto;
-        border: 1px solid red;
         margin: 0 auto;
       }
 
@@ -36,10 +35,7 @@
         margin-left : -95px;
       }
 
-      header>p {
-        float: right;
-        margin-top: 10px;
-      }
+      header>p { float: right; margin-top: 10px; }
 
       header>img {
         position: absolute;
@@ -47,13 +43,8 @@
         top : 56px;
       }
 
-      header>.gnb {
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        height: 50px;
-      }
+      header>.gnb { position: absolute; left: 0; bottom: 10px; width: 100%;
+      height: 50px; }
 
       header>.gnb>li {
         float: left;
@@ -147,27 +138,154 @@
       #main>.slide {
         width: 100%;
         height: 312px;
-        border: 1px solid green;
+        background: url('./img/main_slide_img1.jpg')
       }
+
+      #main>.slide>div {
+        width: 230px;
+        height: 100%;
+        background: url('./img/main_banner_bg.jpg');
+        float: right;
+      }
+
+      #main>.slide>img {
+        margin: 50px;
+      }
+
+      #main>.slide>div>img:nth-child(1) {
+        float: right;
+        margin: 6px;
+      }
+      #main>.slide>div>img:nth-child(2) {
+        margin-left: 10px;
+        margin-top: -10px;
+      }
+      #main>.slide>div>img:nth-child(3) {
+        margin-left: 10px;
+      }
+
       /*banner*/
       #main>.banner {
         width: 100%;
         height: 74px;
-        border: 1px solid green;
       }
+
+      #main>.banner>a {
+        width: 50%;
+        height: 100%;
+        display: block;
+        float: left;
+      }
+
+      #main>.banner>a:nth-child(1) {
+        background: url('./img/main_banner_sub1_bg.jpg');
+      }
+
+      #main>.banner>a:nth-child(2) {
+        background: url('./img/main_banner_sub2_bg.jpg');
+      }
+
+      #main>.banner>a>img {
+        margin: 15px;
+      }
+
       /*latest*/
       #main>.latest {
         width: 100%;
         height: 180px;
-        border: 1px solid green;
       }
+
+      #main>.latest>div {
+        width: 33.333%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      #main>.latest>div>a:nth-child(1) {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+      #main>.latest>div>a:nth-child(2) {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 22px;
+      }
+
+      #main>.latest table {
+        position: absolute;
+        right: 12px;
+        bottom: 20px;
+      }
+
+      #main>.latest table td:nth-child(2) {
+        width: 132px;
+        line-height: 18px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+      }
+
+
       /*info*/
       #main>.info  {
         width: 100%;
         height: 150px;
-        border: 1px solid green;
+        padding: 10px 0;
+        box-sizing: border-box;
+        border-top: 2px solid #756c65;
+        margin-bottom: 0px;
       }
 
+      #main>.info>div {
+        float: left;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #main>.info>div:nth-child(1) {
+        width: 39%;
+      }
+
+      #main>.info>div:nth-child(2) {
+        width: 25%;
+        border-left: 2px solid #d7d7d7;
+        border-right: 1px solid #d7d7d7;
+      }
+
+      #main>.info>div:nth-child(3) {
+        width: 36%;
+      }
+
+
+      #main>.info>div>div:nth-child(2) {
+        margin: 15px 5px;
+      }
+      #main>.info>div>div:nth-child(2)>img {
+        margin: 0px 5px;
+      }
+      #main>.info>div>div:nth-child(2)>span {
+        display : block;
+        float: right;
+        padding-right: 12px;
+      }
+
+      #main>.info>div:nth-child(2) {
+        padding-left: 15px;
+        display: block;
+      }
+      #main>.info>div:nth-child(2)>img {
+        display: block;
+      }
+      #main>.info>div:nth-child(2)>span {
+        display: block;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
@@ -190,10 +308,149 @@
         </ul>
       </header>
       <section id='main'>
-        <article class="slide">slide</article>
-        <article class="banner">banner</article>
-        <article class="latest">latest</article>
-        <article class="info">info</article>
+        <article class="slide">
+          <img src="./img/main_slide_img_tit.png" alt="사람과 자연을 사랑하는 팜스토리"/>
+          <div>
+            <img src="./img/main_banner_txt.png" alt="GRAND OPEN"/>
+            <img src="./img/main_banner_tit.png" alt="팜스토리 오픈기념 30% 할인 이벤트"/>
+            <img src="./img/main_banner_img.png" alt="과일&채소"/>
+          </div>
+        </article>
+        <article class="banner">
+          <a href="">
+            <img src="./img/main_banner_sub1_tit.png" alt="오늘의 식단">
+          </a>
+          <a href="">
+            <img src="./img/main_banner_sub2_tit.png" alt="나도 요리사">
+          </a>
+        </article>
+        <article class="latest">
+          <div>
+            <a href=""><img src="./img/main_latest1_tit.png" alt="텃밭가꾸기"></a>
+            <a href=""><img src="./img/main_latest1_img.jpg" alt="텃밭가꾸기"></a>
+            <table>
+              <tr>
+                <td>></td>
+                <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자~</a></td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <a href=""><img src="./img/main_latest2_tit.png" alt="귀농학교"></a>
+            <a href=""><img src="./img/main_latest2_img.jpg" alt="귀농학교"></a>
+            <table>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <a href=""><img src="./img/main_latest3_tit.png" alt="농작물이야기"></a>
+            <a href=""><img src="./img/main_latest3_img.jpg" alt="농작물이야기"></a>
+            <table>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>토마토! 건강하게 길러서 안심하고 먹자~</td>
+                <td>18-10-02</td>
+              </tr>
+            </table>
+          </div>
+        </article>
+        <article class="info">
+          <div>
+            <div>
+              <img src="./img/main_sub2_cs_tit.png" alt="고객센터안내">
+            </div>
+            <div>
+              <img src="./img/main_sub2_cs_img.png" alt="전화">
+              <img src="./img/main_sub2_cs_txt.png" alt="1666-777 FAX:02-123-4567">
+              <span>
+                평일: AM 09:00 ~ PM 06:00<br>
+                점심: PM 12:00 ~ PM 01:00<br>
+                토, 일요일, 공휴일 휴무<br>
+              </span>
+            </div>
+            <div>
+              <a href=""><img src="./img/main_sub2_cs_bt1.png" alt="1:1 고객 문의"></a>
+              <a href=""><img src="./img/main_sub2_cs_bt2.png" alt="자주 묻는 질문"></a>
+              <a href=""><img src="./img/main_sub2_cs_bt3.png" alt="배송 조회"></a>
+            </div>
+          </div>
+          <div>
+            <img src="./img/main_sub2_account_tit.png" alt="계좌안내">
+            <span>
+              기업은행 123-456789-01-01-012<br/>
+              국민은행 01-1234-56789<br/>
+              우리은행 123-456789-01-01-012<br/>
+              하나은행 123-456789-01-01<br/>
+              예 금 주 (주)팜스토리<br/>
+            </span>
+          </div>
+          <div></div>
+        </article>
       </section>
       <footer>
         <img src="./img/footer_logo.png" />
