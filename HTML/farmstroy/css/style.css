@@ -280,3 +280,207 @@ footer>p>span {
   display: block;
   margin-top: 20px;
 }
+
+/* 서브페이지 공통 */
+#sub {
+  width: 100%;
+  height: auto;
+}
+
+#sub>div {
+  width: 100%;
+  height: 184px;
+  background: url('../img/sub_page_img.jpg');
+  position: relative;
+}
+
+#sub>div>img {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+}
+
+#sub>section {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#sub>section>aside {
+  /* width: 180px; */
+  width: 18%;
+  height: 650px;
+  float: left;
+  background : url("../img/sub_aside_rt_line.png") no-repeat;
+  background-position: right;
+}
+
+#sub>section>aside>img {
+  margin: 10px;
+}
+
+#sub>section>aside>ul {
+  width: 100%;
+  height: 233px;
+  float: left;
+  background: url("../img/sub_aside_bg.png") no-repeat;
+  padding-top: 25px;
+}
+
+#sub>section>aside>ul>li>a {
+  width: 100%;
+  height: 29px;
+  margin-bottom: 6px;
+  font-size: 0;
+  display: block;
+}
+
+
+#sub>section>article {
+  /* width: 800px; */
+  padding-left: 40px;
+  width: 82%;
+  min-height: 650px;
+  float: left;
+  box-sizing: border-box;
+}
+
+#sub>section>article>nav {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #c2c2c2;
+  position: relative;
+}
+
+#sub>section>article>nav>img {
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+}
+
+#sub>section>article>nav>p {
+  position: absolute;
+  right: 0px;
+  bottom: 10px;
+}
+
+#sub>section>article>nav>p>span {
+  font-weight: bold;
+  color: #abba15;
+}
+
+/* 팜스토리 소개 왼쪽 메뉴 */
+#sub>.introduction>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page1_menu1.png");
+}
+#sub>.introduction>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page1_menu1_ov.png");
+}
+#sub>.introduction>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page1_menu1_ov.png");
+}
+#sub>.introduction>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page1_menu2.png");
+}
+#sub>.introduction>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page1_menu2_ov.png");
+}
+#sub>.introduction>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page1_menu2_ov.png");
+}
+/* 장보기 왼쪽 메뉴 */
+#sub>.market>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page2_menu1.png");
+}
+#sub>.market>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page2_menu1_ov.png");
+}
+#sub>.market>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page2_menu1_ov.png");
+}
+/* 농작물이야기 왼쪽 메뉴 */
+#sub>.croptalk>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page3_menu1.png");
+}
+#sub>.croptalk>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page3_menu1_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page3_menu1_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page3_menu2.png");
+}
+#sub>.croptalk>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page3_menu2_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page3_menu2_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(3)>a {
+  background-image: url("../img/sub_page3_menu3.png");
+}
+#sub>.croptalk>aside li:nth-child(3)>a:hover {
+  background-image: url("../img/sub_page3_menu3_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(3).on>a {
+  background-image: url("../img/sub_page3_menu3_ov.png");
+}
+/* 이벤트 왼쪽메뉴 */
+#sub>.event>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page4_menu1.png");
+}
+#sub>.event>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page4_menu1_ov.png");
+}
+#sub>.event>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page4_menu1_ov.png");
+}
+/* 커뮤니티 왼쪽메뉴 */
+#sub>.community>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page5_menu1.png");
+}
+#sub>.community>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page5_menu1_ov.png");
+}
+#sub>.community>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page5_menu1_ov.png");
+}
+#sub>.community>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page5_menu2.png");
+}
+#sub>.community>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page5_menu2_ov.png");
+}
+#sub>.community>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page5_menu2_ov.png");
+}
+#sub>.community>aside li:nth-child(3)>a {
+  background-image: url("../img/sub_page5_menu3.png");
+}
+#sub>.community>aside li:nth-child(3)>a:hover {
+  background-image: url("../img/sub_page5_menu3_ov.png");
+}
+#sub>.community>aside li:nth-child(3).on>a {
+  background-image: url("../img/sub_page5_menu3_ov.png");
+}
+#sub>.community>aside li:nth-child(4)>a {
+  background-image: url("../img/sub_page5_menu4.png");
+}
+#sub>.community>aside li:nth-child(4)>a:hover {
+  background-image: url("../img/sub_page5_menu4_ov.png");
+}
+#sub>.community>aside li:nth-child(4).on>a {
+  background-image: url("../img/sub_page5_menu4_ov.png");
+}
+#sub>.community>aside li:nth-child(5)>a {
+  background-image: url("../img/sub_page5_menu5.png");
+}
+#sub>.community>aside li:nth-child(5)>a:hover {
+  background-image: url("../img/sub_page5_menu5_ov.png");
+}
+#sub>.community>aside li:nth-child(5).on>a {
+  background-image: url("../img/sub_page5_menu5_ov.png");
+}
