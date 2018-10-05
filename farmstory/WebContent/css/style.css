@@ -1,0 +1,486 @@
+/*초기화*/
+* {
+  margin: 0;
+  padding: 0;
+  font: normal 12px '돋움';
+}
+
+ul, ol { list-style: none; }
+a { text-decoration: none; color: #111; }
+
+#wrapper {
+  width : 980px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/*헤더*/
+header {
+  width: 100%;
+  height: 160px;
+  background: url('../img/head_top_line.png') no-repeat;
+  position: relative;
+}
+
+header>.logo {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  margin-left : -95px;
+}
+
+header>p { float: right; margin-top: 10px; }
+
+header>img {
+  position: absolute;
+  right : 0px;
+  top : 56px;
+}
+
+header>.gnb { position: absolute; left: 0; bottom: 10px; width: 100%;
+height: 50px; }
+
+header>.gnb>li {
+  float: left;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+header>.gnb>li>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  border-top: 2px solid #3f3f3f;
+  background-repeat: no-repeat;
+}
+
+header>.gnb>li:nth-child(1)>a {
+  background-image: url('../img/head_menu1.png');
+}
+header>.gnb>li:nth-child(2)>a {
+  background-image: url('../img/head_menu2.png');
+}
+header>.gnb>li:nth-child(3)>a {
+  background-image: url('../img/head_menu3.png');
+}
+header>.gnb>li:nth-child(4)>a {
+  background-image: url('../img/head_menu4.png');
+}
+header>.gnb>li:nth-child(5)>a {
+  background-image: url('../img/head_menu5.png');
+}
+
+header>.gnb>li:nth-child(1)>a:hover {
+  background-image: url('../img/head_menu1_ov.png');
+}
+header>.gnb>li:nth-child(2)>a:hover {
+  background-image: url('../img/head_menu2_ov.png');
+}
+header>.gnb>li:nth-child(3)>a:hover {
+  background-image: url('../img/head_menu3_ov.png');
+}
+header>.gnb>li:nth-child(4)>a:hover {
+  background-image: url('../img/head_menu4_ov.png');
+}
+header>.gnb>li:nth-child(5)>a:hover {
+  background-image: url('../img/head_menu5_ov.png');
+}
+
+/*푸터*/
+footer {
+  width: 100%;
+  height: 130px;
+  /*background: url('../img/footer_top_line.png') no-repeat;*/
+  position: relative;
+  border-top: 1px solid #d6d1bc;
+}
+
+
+footer>p {
+  font-size: 11px;
+  line-height: 16px;
+  color: #585858;
+  float: right;
+  margin-top: 20px;
+  /*
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  */
+}
+
+footer>p>span {
+  font-weight: bold;
+  color: #888;
+}
+
+/*컨텐츠*/
+#main {
+  width: 100%;
+  height: auto;
+}
+
+#main>article {
+  margin-bottom: 10px;
+}
+
+/*slide*/
+#main>.slide {
+  width: 100%;
+  height: 312px;
+  background: url('../img/main_slide_img1.jpg')
+}
+
+#main>.slide>div {
+  width: 230px;
+  height: 100%;
+  background: url('../img/main_banner_bg.jpg');
+  float: right;
+}
+
+#main>.slide>img {
+  margin: 50px;
+}
+
+#main>.slide>div>img:nth-child(1) {
+  float: right;
+  margin: 6px;
+}
+#main>.slide>div>img:nth-child(2) {
+  margin-left: 10px;
+  margin-top: -10px;
+}
+#main>.slide>div>img:nth-child(3) {
+  margin-left: 10px;
+}
+
+/*banner*/
+#main>.banner {
+  width: 100%;
+  height: 74px;
+}
+
+#main>.banner>a {
+  width: 50%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+
+#main>.banner>a:nth-child(1) {
+  background: url('../img/main_banner_sub1_bg.jpg');
+}
+
+#main>.banner>a:nth-child(2) {
+  background: url('../img/main_banner_sub2_bg.jpg');
+}
+
+#main>.banner>a>img {
+  margin: 15px;
+}
+
+/*latest*/
+#main>.latest {
+  width: 100%;
+  height: 180px;
+}
+
+#main>.latest>div {
+  width: 33.333%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#main>.latest>div>a:nth-child(1) {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+#main>.latest>div>a:nth-child(2) {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+}
+
+#main>.latest table {
+  position: absolute;
+  right: 12px;
+  bottom: 20px;
+}
+
+#main>.latest table td:nth-child(2) {
+  width: 132px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+}
+
+
+/*info*/
+#main>.info  {
+  width: 100%;
+  height: 150px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  border-top: 2px solid #756c65;
+  margin-bottom: 0px;
+}
+
+#main>.info>div {
+  float: left;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#main>.info>div:nth-child(1) {
+  width: 39%;
+}
+
+#main>.info>div:nth-child(2) {
+  width: 25%;
+  border-left: 2px solid #d7d7d7;
+  border-right: 1px solid #d7d7d7;
+}
+
+#main>.info>div:nth-child(3) {
+  width: 36%;
+}
+
+
+#main>.info>div>div:nth-child(2) {
+  margin: 15px 5px;
+}
+#main>.info>div>div:nth-child(2)>img {
+  margin: 0px 5px;
+}
+#main>.info>div>div:nth-child(2)>span {
+  display : block;
+  float: right;
+  padding-right: 12px;
+}
+
+#main>.info>div:nth-child(2) {
+  padding-left: 15px;
+  display: block;
+}
+#main>.info>div:nth-child(2)>img {
+  display: block;
+}
+#main>.info>div:nth-child(2)>span {
+  display: block;
+  margin-top: 20px;
+}
+
+/* 서브페이지 공통 */
+#sub {
+  width: 100%;
+  height: auto;
+}
+
+#sub>div {
+  width: 100%;
+  height: 184px;
+  background: url('../img/sub_page_img.jpg');
+  position: relative;
+}
+
+#sub>div>img {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+}
+
+#sub>section {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#sub>section>aside {
+  /* width: 180px; */
+  width: 18%;
+  height: 650px;
+  float: left;
+  background : url("../img/sub_aside_rt_line.png") no-repeat;
+  background-position: right;
+}
+
+#sub>section>aside>img {
+  margin: 10px;
+}
+
+#sub>section>aside>ul {
+  width: 100%;
+  height: 233px;
+  float: left;
+  background: url("../img/sub_aside_bg.png") no-repeat;
+  padding-top: 25px;
+}
+
+#sub>section>aside>ul>li>a {
+  width: 100%;
+  height: 29px;
+  margin-bottom: 6px;
+  font-size: 0;
+  display: block;
+}
+
+
+#sub>section>article {
+  /* width: 800px; */
+  padding-left: 40px;
+  width: 82%;
+  min-height: 650px;
+  float: left;
+  box-sizing: border-box;
+}
+
+#sub>section>article>nav {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #c2c2c2;
+  position: relative;
+}
+
+#sub>section>article>nav>img {
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+}
+
+#sub>section>article>nav>p {
+  position: absolute;
+  right: 0px;
+  bottom: 10px;
+}
+
+#sub>section>article>nav>p>span {
+  font-weight: bold;
+  color: #abba15;
+}
+
+/* 팜스토리 소개 왼쪽 메뉴 */
+#sub>.introduction>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page1_menu1.png");
+}
+#sub>.introduction>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page1_menu1_ov.png");
+}
+#sub>.introduction>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page1_menu1_ov.png");
+}
+#sub>.introduction>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page1_menu2.png");
+}
+#sub>.introduction>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page1_menu2_ov.png");
+}
+#sub>.introduction>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page1_menu2_ov.png");
+}
+/* 장보기 왼쪽 메뉴 */
+#sub>.market>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page2_menu1.png");
+}
+#sub>.market>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page2_menu1_ov.png");
+}
+#sub>.market>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page2_menu1_ov.png");
+}
+/* 농작물이야기 왼쪽 메뉴 */
+#sub>.croptalk>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page3_menu1.png");
+}
+#sub>.croptalk>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page3_menu1_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page3_menu1_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page3_menu2.png");
+}
+#sub>.croptalk>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page3_menu2_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page3_menu2_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(3)>a {
+  background-image: url("../img/sub_page3_menu3.png");
+}
+#sub>.croptalk>aside li:nth-child(3)>a:hover {
+  background-image: url("../img/sub_page3_menu3_ov.png");
+}
+#sub>.croptalk>aside li:nth-child(3).on>a {
+  background-image: url("../img/sub_page3_menu3_ov.png");
+}
+/* 이벤트 왼쪽메뉴 */
+#sub>.event>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page4_menu1.png");
+}
+#sub>.event>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page4_menu1_ov.png");
+}
+#sub>.event>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page4_menu1_ov.png");
+}
+/* 커뮤니티 왼쪽메뉴 */
+#sub>.community>aside li:nth-child(1)>a {
+  background-image: url("../img/sub_page5_menu1.png");
+}
+#sub>.community>aside li:nth-child(1)>a:hover {
+  background-image: url("../img/sub_page5_menu1_ov.png");
+}
+#sub>.community>aside li:nth-child(1).on>a {
+  background-image: url("../img/sub_page5_menu1_ov.png");
+}
+#sub>.community>aside li:nth-child(2)>a {
+  background-image: url("../img/sub_page5_menu2.png");
+}
+#sub>.community>aside li:nth-child(2)>a:hover {
+  background-image: url("../img/sub_page5_menu2_ov.png");
+}
+#sub>.community>aside li:nth-child(2).on>a {
+  background-image: url("../img/sub_page5_menu2_ov.png");
+}
+#sub>.community>aside li:nth-child(3)>a {
+  background-image: url("../img/sub_page5_menu3.png");
+}
+#sub>.community>aside li:nth-child(3)>a:hover {
+  background-image: url("../img/sub_page5_menu3_ov.png");
+}
+#sub>.community>aside li:nth-child(3).on>a {
+  background-image: url("../img/sub_page5_menu3_ov.png");
+}
+#sub>.community>aside li:nth-child(4)>a {
+  background-image: url("../img/sub_page5_menu4.png");
+}
+#sub>.community>aside li:nth-child(4)>a:hover {
+  background-image: url("../img/sub_page5_menu4_ov.png");
+}
+#sub>.community>aside li:nth-child(4).on>a {
+  background-image: url("../img/sub_page5_menu4_ov.png");
+}
+#sub>.community>aside li:nth-child(5)>a {
+  background-image: url("../img/sub_page5_menu5.png");
+}
+#sub>.community>aside li:nth-child(5)>a:hover {
+  background-image: url("../img/sub_page5_menu5_ov.png");
+}
+#sub>.community>aside li:nth-child(5).on>a {
+  background-image: url("../img/sub_page5_menu5_ov.png");
+}
