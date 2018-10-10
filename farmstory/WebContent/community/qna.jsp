@@ -8,11 +8,11 @@
           <aside>
             <img src="../img/sub_aside_tit5.png" alt="커뮤니티">
             <ul>
-              <li><a href="./notice.html">공지사항</a></li>
-              <li><a href="./menu.html">오늘의식단</a></li>
-              <li><a href="./chef.html">나도요리사</a></li>
-              <li class='on'><a href="./qna.html">1:1고객문의</a></li>
-              <li><a href="./faq.html">자주묻는질문</a></li>
+              <li><a href="./notice.jsp">공지사항</a></li>
+              <li><a href="./menu.jsp">오늘의식단</a></li>
+              <li><a href="./chef.jsp">나도요리사</a></li>
+              <li class='on'><a href="./qna.jsp">1:1고객문의</a></li>
+              <li><a href="./faq.jsp">자주묻는질문</a></li>
             </ul>
           </aside>
           <article>

@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.PreparedStatement;
 
 public class DBConfig {
 
 	//데이터 베이스의 주소, 아이디, 비밀번호
-	private static final String HOST = "jdbc:mysql://192.168.0.23:3306/jcw";
+	private static final String HOST = "jdbc:mysql://192.168.0.100:3306/jboard2";
 	private static final String USER = "jcw";
 	private static final String PASS = "1234";
 	

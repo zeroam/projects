@@ -8,9 +8,9 @@
           <aside>
             <img src="../img/sub_aside_tit3.png" alt="농작물이야기">
             <ul>
-              <li><a href="./croptalk.html">농작물이야기</a></li>
-              <li class='on'><a href="./grow.html">텃밭가꾸기</a></li>
-              <li><a href="./school.html">귀농학교</a></li>
+              <li><a href="./croptalk.jsp">농작물이야기</a></li>
+              <li class='on'><a href="./grow.jsp">텃밭가꾸기</a></li>
+              <li><a href="./school.jsp">귀농학교</a></li>
             </ul>
           </aside>
           <article>

@@ -31,7 +31,7 @@ public class WriteService implements CommandAction {
 		if(method.equals("POST")) {
 			// 첨부된 파일이 있으면 upload 디렉터리에 파일저장
 			// 개발환경 : C:\Users\java.user-PC\Dropbox\java\workspace\jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jboard2\ upload
-			// 리얼서버 : /home/jcw/jboard2/upload
+			// 리얼서버 : /home/zeroam/jboard2/upload
 			String path = req.getServletContext().getRealPath("/upload");
 			int maxSize = 1024*1024*10; //10MB
 			

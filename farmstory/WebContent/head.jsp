@@ -4,24 +4,24 @@
   <head>
     <meta charset="utf-8">
     <title>팜스토리</title>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/farmstory/css/style.css"/>
   </head>
   <body>
     <div id='wrapper'>
       <header>
-        <a href="./index.jsp" class='logo'><img src="./img/logo.png" alt="로고"/></a>
+        <a href="/farmstory" class='logo'><img src="/farmstory/img/logo.png" alt="로고"/></a>
         <p>
-          <a href="./index.html">HOME |</a>
+          <a href="/farmstory">HOME |</a>
           <a href="">로그인 |</a>
           <a href="">회원가입 |</a>
           <a href="">고객센터</a>
         </p>
-        <img src="./img/head_txt_img.png" alt="3만원 이상 구매시..."/>
+        <img src="/farmstory/img/head_txt_img.png" alt="3만원 이상 구매시..."/>
         <ul class='gnb'>
-          <li><a href="./introduction/hello.html">팜스토리 소개</a></li>
-          <li><a href="./market/market.html">장보기</a></li>
-          <li><a href="./story/croptalk.html">농작물 이야기</a></li>
-          <li><a href="./event/event.html">이벤트</a></li>
-          <li><a href="./community/notice.html">커뮤니티</a></li>
+          <li><a href="/farmstory/introduction/hello.jsp">팜스토리 소개</a></li>
+          <li><a href="/farmstory/market/market.jsp">장보기</a></li>
+          <li><a href="/farmstory/story/croptalk.jsp">농작물 이야기</a></li>
+          <li><a href="/farmstory/event/event.jsp">이벤트</a></li>
+          <li><a href="/farmstory/community/notice.jsp">커뮤니티</a></li>
         </ul>
       </header>

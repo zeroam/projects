@@ -129,7 +129,7 @@
 			</div>
 		</div>
 		<div>
-			<img src="./img/main_sub2_account_tit.png" alt="계좌안내"> <span>
+			<img src="/farmstory/img/main_sub2_account_tit.png" alt="계좌안내"> <span>
 				기업은행 123-456789-01-01-012<br /> 국민은행 01-1234-56789<br /> 우리은행
 				123-456789-01-01-012<br /> 하나은행 123-456789-01-01<br /> 예 금 주 (주)팜스토리<br />
 			</span>
