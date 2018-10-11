@@ -1,12 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="./head.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="./head.jsp"%>
 <section id='main'>
 	<article class="slide">
 		<img src="./img/main_slide_img_tit.png" alt="사람과 자연을 사랑하는 팜스토리" />
 		<div>
-			<img src="./img/main_banner_txt.png" alt="GRAND OPEN" /> <img
-				src="./img/main_banner_tit.png" alt="팜스토리 오픈기념 30% 할인 이벤트" /> <img
-				src="./img/main_banner_img.png" alt="과일&채소" />
+			<img src="./img/main_banner_txt.png" alt="GRAND OPEN" /> 
+			<img src="./img/main_banner_tit.png" alt="팜스토리 오픈기념 30% 할인 이벤트" /> 
+			<img src="./img/main_banner_img.png" alt="과일&채소" />
 		</div>
 	</article>
 	<article class="banner">
@@ -116,8 +116,8 @@
 				<img src="./img/main_sub2_cs_tit.png" alt="고객센터안내">
 			</div>
 			<div>
-				<img src="./img/main_sub2_cs_img.png" alt="전화"> <img
-					src="./img/main_sub2_cs_txt.png" alt="1666-777 FAX:02-123-4567">
+				<img src="./img/main_sub2_cs_img.png" alt="전화"> 
+				<img src="./img/main_sub2_cs_txt.png" alt="1666-777 FAX:02-123-4567">
 				<span> 평일: AM 09:00 ~ PM 06:00<br> 점심: PM 12:00 ~ PM
 					01:00<br> 토, 일요일, 공휴일 휴무<br>
 				</span>
@@ -129,12 +129,13 @@
 			</div>
 		</div>
 		<div>
-			<img src="/farmstory/img/main_sub2_account_tit.png" alt="계좌안내"> <span>
-				기업은행 123-456789-01-01-012<br /> 국민은행 01-1234-56789<br /> 우리은행
-				123-456789-01-01-012<br /> 하나은행 123-456789-01-01<br /> 예 금 주 (주)팜스토리<br />
+			<img src="/farmstory/img/main_sub2_account_tit.png" alt="계좌안내">
+			<span> 기업은행 123-456789-01-01-012<br /> 국민은행 01-1234-56789<br />
+				우리은행 123-456789-01-01-012<br /> 하나은행 123-456789-01-01<br /> 예 금 주
+				(주)팜스토리<br />
 			</span>
 		</div>
 		<div></div>
 	</article>
 </section>
-<%@ include file="./tail.jsp" %>
+<%@ include file="./tail.jsp"%>

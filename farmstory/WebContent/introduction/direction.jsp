@@ -8,8 +8,8 @@
 		<aside>
 			<img src="../img/sub_aside_tit1.png" alt="팜스토리소개">
 			<ul>
-				<li><a href="./hello.jsp">인사말</a></li>
-				<li class='on'><a href="./direction.jsp">찾아오시는길</a></li>
+				<li><a href="./hello.do">인사말</a></li>
+				<li class='on'><a href="./direction.do">찾아오시는길</a></li>
 			</ul>
 		</aside>
 		<article>
