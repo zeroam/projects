@@ -134,4 +134,42 @@ public class MemberDAO {
 		return result;
 	}
 
+	// id, pass값을 가진 데이터 불러오기
+	public MemberVO login(String id, String pw) {
+		MemberVO vo = null;
+		try {
+			conn = DBConfig.getConnection();
+
+			psmt = conn.prepareStatement(SQL.SELECT_UID_PASS);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				vo = new MemberVO();
+				vo.setSeq(rs.getInt(1));
+				vo.setUid(rs.getString(2));
+				vo.setPass(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setNick(rs.getString(5));
+				vo.setEmail(rs.getString(6));
+				vo.setHp(rs.getString(7));
+				vo.setGrade(rs.getInt(8));
+				vo.setZip(rs.getString(9));
+				vo.setAddr1(rs.getString(10));
+				vo.setAddr2(rs.getString(11));
+				vo.setRegip(rs.getString(12));
+				vo.setRdate(rs.getString(13));
+			}
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			DBConfig.close(rs);
+			DBConfig.close(psmt);
+			DBConfig.close(conn);
+		}
+
+		return vo;
+	}
 }

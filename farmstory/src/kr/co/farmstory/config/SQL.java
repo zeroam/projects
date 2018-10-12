@@ -7,8 +7,8 @@ public class SQL {
 	public static final String SELECT_CHECK_NICK = "SELECT COUNT(*) FROM FS_MEMBER WHERE nick=?";
 	public static final String SELECT_CHECK_HP = "SELECT COUNT(*) FROM FS_MEMBER WHERE hp=?";
 	public static final String SELECT_CHECK_EMAIL = "SELECT COUNT(*) FROM FS_MEMBER WHERE email=?";
-	public static final String SELECT_UID_PASS = "SELECT * FROM FS_MEMBER WHERE uid=? AND pass=?";
-	public static final String INSERT_MEMBER = "INSERT INTO FS_MEMBER (uid, pass, name, nick, email, hp, grade, zip, addr1, addr2, regip, rdate) VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW())";
+	public static final String SELECT_UID_PASS = "SELECT * FROM FS_MEMBER WHERE uid=? AND pass=PASSWORD(?)";
+	public static final String INSERT_MEMBER = "INSERT INTO FS_MEMBER (uid, pass, name, nick, email, hp, grade, zip, addr1, addr2, regip, rdate) VALUES (?,PASSWORD(?),?,?,?,?,?,?,?,?,?,NOW())";
 	
 	public static final String INSERT_BOARD = "INSERT INTO FS_BOARD (cate, title, contents, file, uid, regip, rdate) VALUES (?,?,?,?,?,?,NOW());";
 	public static final String SELECT_BOARD = "SELECT b.*, m.nick FROM FS_BOARD AS b LEFT JOIN FS_MEMBER AS m ON b.uid = m.uid WHERE parent=0 ORDER BY b.seq DESC LIMIT ?, 10;";

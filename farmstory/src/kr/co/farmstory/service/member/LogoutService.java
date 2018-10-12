@@ -2,6 +2,7 @@ package kr.co.farmstory.service.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.farmstory.controller.CommandAction;
 
@@ -9,7 +10,11 @@ public class LogoutService implements CommandAction {
 
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
-		return null;
+		// request 객체로 부터 세션값 가져오기
+		HttpSession session = req.getSession();
+		// 세션 만료
+		session.invalidate();
+		return "redirect:/farmstory/index.do";
 	}
 
 }

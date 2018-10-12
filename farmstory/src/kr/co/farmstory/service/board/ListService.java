@@ -9,7 +9,14 @@ public class ListService implements CommandAction {
 
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) {
-		return null;
+		
+		String gr = req.getParameter("gr");
+		String cate = req.getParameter("cate");
+		
+		req.setAttribute("gr", gr);
+		req.setAttribute("cate", cate);
+		
+		return "/board/list.jsp";
 	}
 
 }
