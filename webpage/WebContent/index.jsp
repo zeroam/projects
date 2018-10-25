@@ -44,6 +44,14 @@
 #page-top>header>div>div {
 	z-index: 100;
 }
+
+#page-top > header > div > div > h2:nth-child(2) {
+	margin-bottom: 1em!important;
+}
+#page-top > header > div > div > h2:nth-child(3) {
+	margin-bottom: 0.5em!important;
+	font-size: 1.5em;
+}
 /* 로그인 폼 css */
 #login>div {
 	margin-top: -150px;
@@ -113,7 +121,29 @@
 			$('#page-top > .alert-success').removeClass('off').addClass('on');
 		}
 		
+		printClock();
+		
 	});
+	
+	function printClock() {
+		var clock = document.getElementById("clock");
+		var date = new Date();
+		var hours = addZeros(date.getHours(), 2);
+		var minutes = addZeros(date.getMinutes(), 2);
+		var seconds = addZeros(date.getSeconds(), 2);
+		
+		clock.innerHTML = hours+":"+minutes+":"+seconds;
+		setTimeout("printClock();", 1000)
+	}
+	
+	function addZeros(num, digit) {
+		var zero = "";
+		num = num.toString();
+		if(num.length < digit) {
+			zero += "0";
+		}
+		return zero + num;
+	}
 
 </script>
 
@@ -183,6 +213,9 @@
 					<h2 class="text-white-50 mx-auto mt-2 mb-5">
 						Welcome to my sand-box page<br /> Please enjoy my stuff<br /> |
 						id : test | password : 1234 |
+					</h2>
+					<h2 class="text-white-50 mx-auto mt-2 mb-5" id='clock'>
+						Clock
 					</h2>
 					<a href="#login" class="btn btn-primary js-scroll-trigger">Login</a>
 				</div>

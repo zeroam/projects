@@ -45,12 +45,12 @@
 		<div class="plan">
 			<div class="plan_wrap">
 				<button id=btnOpenLayer>
-					<p>10.17</p>
+					<p><span class="month">월</span>.<span class="day">일</span></p>
 					<p>전시관일정</p>
 				</button>
 				<div class="plan_layer on">
 					<ul>
-						<li>2018.10.18</li>
+						<li><span class="year">년</span>.<span class="month">월</span>.<span class="day">일</span></li>
 						<li>오늘의 일정</li>
 						<li>...</li>
 					</ul>
@@ -81,7 +81,7 @@
 						<div class="time_top">
 							<div></div>
 							<div>
-								<p>10.18(목)</p>
+								<p><span class="month">월</span>.<span class="day">일</span>(<span class="day_t">요일</span>)</p>
 								<p>
 									<span>오전</span> 09:30-<span>오후</span> 05:30
 								</p>
