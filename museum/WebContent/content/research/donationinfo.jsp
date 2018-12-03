@@ -9,9 +9,9 @@
 			<li class="home"><a href="" title="홈"> <i
 					class="fab fa-fort-awesome"></i>
 			</a></li>
-			<li><a href="/museum/content/look/observation.jsp">관람</a></li>
-			<li><a href="">이용안내</a></li>
-			<li><a>주차 안내</a></li>
+			<li><a href="/museum/content/look/observation.jsp">연구</a></li>
+			<li><a href="">자료기증</a></li>
+			<li><a>기증 안내</a></li>
 			<a href="#" class="btn_visual"> <i class="fas fa-arrow-up"></i>
 			</a>
 		</ul>
@@ -24,7 +24,7 @@
 		</div>
 		<!-- aside end -->
 		<div class="main">
-			렌탈
+			기증 안내
 		</div>
 	</div>
 </section>

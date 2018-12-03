@@ -9,9 +9,9 @@
 			<li class="home"><a href="" title="홈"> <i
 					class="fab fa-fort-awesome"></i>
 			</a></li>
-			<li><a href="/museum/content/observation.do">관람</a></li>
-			<li><a href="">이용안내</a></li>
-			<li><a>주차 안내</a></li>
+			<li><a href="/museum/content/observation.do">전시</a></li>
+			<li><a href="">상설전시</a></li>
+			<li><a>국토세움실</a></li>
 			<a href="#" class="btn_visual"> <i class="fas fa-arrow-up"></i>
 			</a>
 		</ul>
