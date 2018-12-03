@@ -90,7 +90,6 @@
 #page-top > .alert.off {
 	display: none;
 }
-
 </style>
 
 <!-- custom script -->
@@ -144,7 +143,6 @@
 		}
 		return zero + num;
 	}
-
 </script>
 
 
@@ -376,7 +374,13 @@
 						<div class="d-flex h-100">
 							<div class="project-text w-100 my-auto text-center text-lg-left">
 								<h4 class="text-white">게시판</h4>
-								<p class="mb-0 text-white-50">게시판 구현</p>
+								<p class="mb-0 text-white-50">MVC 패턴을 활용한 JSP 웹 프로젝트</p>
+								<p class="mb-0 text-white-50">
+									- 로그인 기능 구현(회원가입시 ajax 통신을 통한 중복검사)<br/>
+									- 게시판 기능 구현(페이징 처리)<br/>
+									- 파일 업로드 기능 구현<br/>
+								</p>
+								<a href="https://github.com/zeroam/projects/tree/master/jboard2" target="_blank" style="color:white; font-size:15px; text-align:right">소스코드</a>
 								<hr class="d-none d-lg-block mb-0 ml-0">
 							</div>
 						</div>
@@ -386,7 +390,7 @@
 			<!-- farmstory project -->
 			<div class="row justify-content-center no-gutters">
 				<div class="col-lg-6">
-					<a href="/farmstory/index.do" target="_blank"> <img
+					<a href="http://zeroam.dothome.co.kr/farmstory/" target="_blank"> <img
 						class="img-fluid" src="img/farmstory.png" alt="">
 					</a>
 				</div>
@@ -395,9 +399,14 @@
 						<div class="d-flex h-100">
 							<div class="project-text w-100 my-auto text-center text-lg-right">
 								<h4 class="text-white">Farmstory</h4>
-								<p class="mb-0 text-white-50">Another example of a project
-									with its respective description. These sections work well
-									responsively as well, try this theme on a small screen!</p>
+								<p class="mb-0 text-white-50">그누보드 5 기반의 웹페이지</p>
+								<p class="mb-0 text-white-50">
+									- dothome 호스팅<br/>
+									- 팝업창 기능<br/>
+									- 기본 게시판, 갤러리 게시판<br/>
+									- 로그인 기능<br/>
+									- 최신글 가져오기<br/>
+								</p>
 								<hr class="d-none d-lg-block mb-0 mr-0">
 							</div>
 						</div>
@@ -439,8 +448,7 @@
 							<i class="fas fa-map-marked-alt text-primary mb-2"></i>
 							<h4 class="text-uppercase m-0">Address</h4>
 							<hr class="my-4">
-							<div class="small text-black-50">4923 Market Street,
-								Orlando FL</div>
+							<div class="small text-black-50"></div>
 						</div>
 					</div>
 				</div>
@@ -452,7 +460,7 @@
 							<h4 class="text-uppercase m-0">Email</h4>
 							<hr class="my-4">
 							<div class="small text-black-50">
-								<a href="#">hello@yourdomain.com</a>
+								<a href="#">imdff0803@gmail.com</a>
 							</div>
 						</div>
 					</div>
@@ -464,16 +472,17 @@
 							<i class="fas fa-mobile-alt text-primary mb-2"></i>
 							<h4 class="text-uppercase m-0">Phone</h4>
 							<hr class="my-4">
-							<div class="small text-black-50">+1 (555) 902-8832</div>
+							<div class="small text-black-50">+1 (808) 400-1576</div>
+							<div class="small text-black-50">twilio 서비스 활용한 봇 서비스(기능 구현 중)</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="social d-flex justify-content-center">
-				<a href="#" class="mx-2"> <i class="fab fa-twitter"></i>
-				</a> <a href="#" class="mx-2"> <i class="fab fa-facebook-f"></i>
-				</a> <a href="#" class="mx-2"> <i class="fab fa-github"></i>
+				<!-- <a href="#" class="mx-2"> <i class="fab fa-twitter"></i>
+				</a> <a href="#" class="mx-2"> <i class="fab fa-facebook-f"></i> -->
+				</a> <a href="https://github.com/zeroam" target="_blank" class="mx-2"> <i class="fab fa-github"></i>
 				</a>
 			</div>
 
@@ -481,7 +490,7 @@
 	</section>
 	<!-- Footer -->
 	<footer class="bg-black small text-center text-white-50">
-		<div class="container">Copyright &copy; Your Website 2018</div>
+		<div class="container">Copyright &copy; SandBoxPage</div>
 	</footer>
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
