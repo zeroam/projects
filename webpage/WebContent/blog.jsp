@@ -97,11 +97,7 @@ body>div>div>div.col-lg-9 {
 					<li class="nav-item active"><a class="nav-link"
 						href="/webpage/blog.do">Home <span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Services</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="https://github.com/zeroam/studynote/wiki" target="_blank">Github Page</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -137,6 +133,11 @@ body>div>div>div.col-lg-9 {
 					<hr />
 					<br />
 					<p>반갑습니다. 저의 크롤러 블로그 페이지에 오신 것을 환영합니다.</p>
+					<p>리눅스의 crontab 기능을 활용하여 10분마다 파이썬 코드를 실행해 데이터 베이스를 업데이트 합니다.</p>
+					<p>블로그의 글들은 데이터 베이스에 있는 컨텐츠를 불러와 읽고 있습니다.</p>
+					<br/><br/>
+					<a href="https://github.com/zeroam/studynote/blob/master/content/Home.md" target="_blank">코드 보기</a><br/><br/>
+					<a href="https://github.com/zeroam/projects/tree/master/webpage" target="_blank">전체 소스 코드 보기</a>
 				</c:if>
 				<c:if test="${content.cont != null }">
 					<h2>
