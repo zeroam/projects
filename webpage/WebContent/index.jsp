@@ -372,7 +372,7 @@
 			<!-- museum project -->
 			<div class="row justify-content-center no-gutters mb-5 mb-lg-0">
 				<div class="col-lg-6">
-					<a href="/jboard2/index.do" target="_blank"> <img class="img-fluid" src="img/museum.png" alt="">
+					<a href="/museum" target="_blank"> <img class="img-fluid" src="img/museum.png" alt="">
 					</a>
 				</div>
 				<div class="col-lg-6">
@@ -382,17 +382,35 @@
 								<h4 class="text-white">국토발전전시관</h4>
 								<p class="mb-0 text-white-50">스프링 프레임워크 기반의 웹 페이지</p>
 								<p class="mb-0 text-white-50">
-									- 디자인 코딩<br />
-									- 게시판 기능 구현중<br /> 
+									- 소스코드 페이지 참조<br />
 								</p>
-								<a href="" style="color: white; font-size: 15px; text-align: right">소스코드</a>
+								<a href="https://github.com/zeroam/museum" style="color: white; font-size: 15px; text-align: right" target="_blank">소스코드</a>
 								<hr class="d-none d-lg-block mb-0 ml-0">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
+			<!-- side projects -->
+			<div class="row justify-content-center no-gutters">
+				<div class="col-lg-6">
+					<a href="/webpage/blog.do?cate=Projects&title=Home" target="_blank"> <img class="img-fluid" src="img/diana-parkhouse.jpg" alt="">
+					</a>
+				</div>
+				<div class="col-lg-6 order-lg-first">
+					<div class="bg-black text-center h-100 project">
+						<div class="d-flex h-100">
+							<div class="project-text w-100 my-auto text-center text-lg-right">
+								<h4 class="text-white">Side Projects</h4>
+								<p class="mb-0 text-white-50">그외 사이트 프로젝트</p>
+								<p class="mb-0 text-white-50">
+								</p>
+								<hr class="d-none d-lg-block mb-0 mr-0">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<!-- Signup Section -->
